@@ -1,9 +1,8 @@
 class CreateUsers < ActiveRecord::Migration[5.1]
   def change
-    create_table :users, id: false do |t|
-      t.primary_key :id
+    create_table :users do |t|
       t.string :name
-      t.integer :answer_id
+      t.references :answer
 
       t.timestamps
     end

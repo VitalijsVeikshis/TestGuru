@@ -1,9 +1,8 @@
 class CreateQuestions < ActiveRecord::Migration[5.1]
   def change
-    create_table :questions, id: false do |t|
-      t.primary_key :id
+    create_table :questions do |t|
       t.string :body
-      t.integer :test_id
+      t.references :test
 
       t.timestamps
     end
