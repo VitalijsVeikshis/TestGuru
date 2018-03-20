@@ -4,7 +4,6 @@ class CreateAnswers < ActiveRecord::Migration[5.1]
       t.string :body
       t.boolean :correct
       t.references :question
-      t.references :user
 
       t.timestamps
     end

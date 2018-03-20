@@ -6,51 +6,102 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-LIST_OF_CATEGORIES = [
-  { title: 'Frontend' },
-  { title: 'Backend' },
-  { title: 'Machine Learning' }
-].freeze
+list_of_categories = Category.create!(
+  [
+    { title: 'Frontend' },
+    { title: 'Backend' },
+    { title: 'Machine Learning' }
+  ]
+)
 
-LIST_OF_TESTS = [
-  { title: 'Ruby', level: 1, category_id: 2 },
-  { title: 'JS', level: 0, category_id: 1 },
-  { title: 'Rails', level: 2, category_id: 2 },
-  { title: 'R', level: 5, category_id: 3 },
-  { title: 'Java', level: 3, category_id: 2 }
-].freeze
+list_of_tests = Test.create!(
+  [
+    { title: 'Ruby',
+      level: 1,
+      category_id: list_of_categories[1].id },
+    { title: 'JS',
+      level: 0,
+      category_id: list_of_categories[0].id },
+    { title: 'Rails',
+      level: 2,
+      category_id: list_of_categories[1].id },
+    { title: 'R',
+      level: 5,
+      category_id: list_of_categories[2].id },
+    { title: 'Java',
+      level: 3,
+      category_id: list_of_categories[1].id }
+  ]
+)
 
-LIST_OF_QUESTIONS = [
-  { body: 'Ruby question 1? (Ruby 1)', test_id: 1 },
-  { body: 'Ruby question 2? (Ruby 2)', test_id: 1 },
-  { body: 'Ruby question 3? (Ruby 3)', test_id: 1 },
-  { body: 'Java question 1? (Java 1)', test_id: 5 },
-  { body: 'Java question 2? (Java 2)', test_id: 5 },
-  { body: 'R question 1? (R 1)', test_id: 4 },
-  { body: 'R question 2? (R 2)', test_id: 4 },
-  { body: 'R question 3? (R 3)', test_id: 4 }
-].freeze
+list_of_questions = Question.create!(
+  [
+    { body: 'Ruby question 1?',
+      test_id: list_of_tests[0].id },
+    { body: 'Ruby question 2?',
+      test_id: list_of_tests[0].id },
+    { body: 'Ruby question 3?',
+      test_id: list_of_tests[0].id },
+    { body: 'Java question 1?',
+      test_id: list_of_tests[4].id },
+    { body: 'Java question 2?',
+      test_id: list_of_tests[4].id },
+    { body: 'R question 1?',
+      test_id: list_of_tests[3].id },
+    { body: 'R question 2?',
+      test_id: list_of_tests[3].id },
+    { body: 'R question 3?',
+      test_id: list_of_tests[3].id }
+  ]
+)
 
-LIST_OF_USERS = [
-  { name: 'User1' },
-  { name: 'User2' },
-  { name: 'User3' },
-  { name: 'User4' }
-].freeze
+list_of_users = User.create!(
+  [
+    { name: 'User1' },
+    { name: 'User2' },
+    { name: 'User3' },
+    { name: 'User4' }
+  ]
+)
 
-LIST_OF_ANSWERS = [
-  { body: 'Ruby 1', correct: true, question_id: 1, user_id: 1 },
-  { body: 'Ruby 2 wrong answer', correct: false, question_id: 2, user_id: 1 },
-  { body: 'Ruby 3', correct: true, question_id: 3, user_id: 1 },
-  { body: 'Ruby 1 wrong answer', correct: false, question_id: 1, user_id: 2 },
-  { body: 'Ruby 2 wrong answer', correct: false, question_id: 2, user_id: 2 },
-  { body: 'Ruby 3 wrong answer', correct: false, question_id: 3, user_id: 2 },
-  { body: 'Java 1', correct: true, question_id: 4, user_id: 2 },
-  { body: 'Java 2', correct: true, question_id: 5, user_id: 2 }
-].freeze
+TestPassage.create!(
+  [
+    { test_id: list_of_tests[0].id,
+      user_id: list_of_users[0].id },
+    { test_id: list_of_tests[1].id,
+      user_id: list_of_users[0].id },
+    { test_id: list_of_tests[2].id,
+      user_id: list_of_users[0].id },
+    { test_id: list_of_tests[3].id,
+      user_id: list_of_users[1].id }
+  ]
+)
 
-Category.create(LIST_OF_CATEGORIES)
-Test.create(LIST_OF_TESTS)
-Question.create(LIST_OF_QUESTIONS)
-User.create(LIST_OF_USERS)
-Answer.create(LIST_OF_ANSWERS)
+Answer.create!(
+  [
+    { body: 'Ruby 1',
+      correct: true,
+      question_id: list_of_questions[0].id },
+    { body: 'Ruby 2',
+      correct: true,
+      question_id: list_of_questions[1].id },
+    { body: 'Ruby 3',
+      correct: true,
+      question_id: list_of_questions[2].id },
+    { body: 'Java 1',
+      correct: true,
+      question_id: list_of_questions[3].id },
+    { body: 'Java 2',
+      correct: true,
+      question_id: list_of_questions[4].id },
+    { body: 'R 1',
+      correct: true,
+      question_id: list_of_questions[5].id },
+    { body: 'R 2',
+      correct: true,
+      question_id: list_of_questions[6].id },
+    { body: 'R 3',
+      correct: true,
+      question_id: list_of_questions[7].id }
+  ]
+)
