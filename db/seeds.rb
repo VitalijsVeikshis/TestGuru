@@ -105,3 +105,19 @@ Answer.create!(
       question_id: list_of_questions[7].id }
   ]
 )
+
+
+Author.create!(
+  [
+    { user_id: list_of_users[2].id,
+      test_id: list_of_tests[0].id },
+    { user_id: list_of_users[2].id,
+      test_id: list_of_tests[1].id },
+    { user_id: list_of_users[2].id,
+      test_id: list_of_tests[2].id },
+    { user_id: list_of_users[3].id,
+      test_id: list_of_tests[3].id },
+    { user_id: list_of_users[0].id,
+      test_id: list_of_tests[4].id }
+  ]
+)
