@@ -3,8 +3,7 @@ class Test < ApplicationRecord
   has_many :test_passages
   has_many :users, through: :test_passages
   belongs_to :category
-  has_one :author
-  has_one :user, through: :authors
+  belongs_to :author, class_name: 'User', foreign_key: 'author_id'
 
   def self.by_category(category)
     joins(:category).where(categories: { title: category })
