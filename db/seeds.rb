@@ -14,23 +14,37 @@ list_of_categories = Category.create!(
   ]
 )
 
+list_of_users = User.create!(
+  [
+    { name: 'User1' },
+    { name: 'User2' },
+    { name: 'User3' },
+    { name: 'User4' }
+  ]
+)
+
 list_of_tests = Test.create!(
   [
     { title: 'Ruby',
       level: 1,
-      category_id: list_of_categories[1].id },
+      category_id: list_of_categories[1].id,
+      author_id: list_of_users[2].id },
     { title: 'JS',
       level: 0,
-      category_id: list_of_categories[0].id },
+      category_id: list_of_categories[0].id,
+      author_id: list_of_users[2].id },
     { title: 'Rails',
       level: 2,
-      category_id: list_of_categories[1].id },
+      category_id: list_of_categories[1].id,
+      author_id: list_of_users[2].id },
     { title: 'R',
       level: 5,
-      category_id: list_of_categories[2].id },
+      category_id: list_of_categories[2].id,
+      author_id: list_of_users[3].id },
     { title: 'Java',
       level: 3,
-      category_id: list_of_categories[1].id }
+      category_id: list_of_categories[1].id,
+      author_id: list_of_users[0].id }
   ]
 )
 
@@ -52,15 +66,6 @@ list_of_questions = Question.create!(
       test_id: list_of_tests[3].id },
     { body: 'R question 3?',
       test_id: list_of_tests[3].id }
-  ]
-)
-
-list_of_users = User.create!(
-  [
-    { name: 'User1' },
-    { name: 'User2' },
-    { name: 'User3' },
-    { name: 'User4' }
   ]
 )
 
