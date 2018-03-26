@@ -16,10 +16,10 @@ list_of_categories = Category.create!(
 
 list_of_users = User.create!(
   [
-    { name: 'User1' },
-    { name: 'User2' },
-    { name: 'User3' },
-    { name: 'User4' }
+    { email: 'User1@m.com' },
+    { email: 'User2@m.com' },
+    { email: 'User3@m.com' },
+    { email: 'User4@m.com' }
   ]
 )
 
