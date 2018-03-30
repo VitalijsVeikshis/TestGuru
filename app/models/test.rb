@@ -19,4 +19,8 @@ class Test < ApplicationRecord
   def self.by_category(category)
     by_category_title(category).order(title: :desc).pluck(:title)
   end
+
+  def question(question_id)
+    questions.find(question_id)
+  end
 end
