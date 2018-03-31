@@ -1,4 +1,4 @@
-<form action="<%= test_questions_path %>" method="post">
+<form action="<%= test_questions_path(@test) %>" method="post">
   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
   <p>
     <label for="question-body">Question:</label>

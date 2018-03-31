@@ -1,15 +1,15 @@
 class QuestionsController < ApplicationController
   before_action :find_test
 
-  rescue_from ActiveRecord::RecordNotFound,
-              with: :rescue_with_question_not_found
+  # rescue_from ActiveRecord::RecordNotFound,
+  #            with: :rescue_with_question_not_found
 
   def index
     render json: { questions: @test.questions }
   end
 
   def show
-    render json: { question: @test.question(params[:id]) }
+    render json: { question: @test.questions.find(params[:id]) }
   end
 
   def new; end
@@ -27,7 +27,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:body)
+    params.require(:question).permit(:test_id, :body)
   end
 
   def find_test
