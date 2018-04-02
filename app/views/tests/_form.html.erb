@@ -18,7 +18,7 @@
 
   <p>
     <%= form.label :author %><br>
-    <%= form.text_field :author, id: :test_author, value: @author.nil? ? '' : @author.email %>
+    <%= form.text_field :author, id: :test_author, value: @author.is_a?(User) ? @author.email : '' %>
   </p>
 
   <p><%= form.submit %></p>
