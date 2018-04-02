@@ -17,8 +17,8 @@
   </p>
 
   <p>
-    <%= form.label :author_id %><br>
-    <%= form.collection_select :author_id, User.authors, :id, :email, prompt: true %>
+    <%= form.label :author %><br>
+    <%= form.text_field :author, id: :test_author, value: @author.nil? ? '' : @author.email %>
   </p>
 
   <p><%= form.submit %></p>
