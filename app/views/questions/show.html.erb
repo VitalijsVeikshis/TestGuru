@@ -1,0 +1,9 @@
+<p>
+  <strong>Question:</strong>
+  <%= @question.body %><br>
+</p>
+
+<p>
+  <%= link_to 'Edit', edit_question_url(@question, params: { test_id: @test.id }) %> |
+  <%= link_to 'Back to test', test_path(@test) %>
+</p>

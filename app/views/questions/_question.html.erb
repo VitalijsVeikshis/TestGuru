@@ -1,0 +1,11 @@
+<tr>
+  <td><%= question.body %></td>
+  <td><%= link_to 'Show', question_url(question, params: { test_id: @test.id })  %></td>
+  <td><%= link_to 'Edit', edit_question_url(question, params: { test_id: @test.id })  %></td>
+  <td>
+    <%= link_to 'Delete',
+                question_url(question, params: { test_id: @test.id }),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+  </td>
+</tr>
