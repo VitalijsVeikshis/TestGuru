@@ -48,7 +48,6 @@ class QuestionsController < ApplicationController
 
   def find_test
     return @test = @question.test if @question.is_a?(Question)
-
     @test = Test.find(params[:test_id])
   end
 

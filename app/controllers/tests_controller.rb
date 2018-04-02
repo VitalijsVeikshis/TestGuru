@@ -1,6 +1,9 @@
 class TestsController < ApplicationController
   before_action :find_test, only: %i[show edit update destroy]
 
+  rescue_from ActiveRecord::RecordNotFound,
+              with: :rescue_with_test_not_found
+
   def index
     @tests = Test.all
   end
@@ -13,7 +16,7 @@ class TestsController < ApplicationController
   end
 
   def create
-    @test = Test.new(complete_test_params)
+    @test = Test.new(test_params)
 
     if @test.save
       redirect_to @test
@@ -45,12 +48,18 @@ class TestsController < ApplicationController
     @test = Test.find(params[:id])
   end
 
-  def test_params
+  def permit_test_params
     params.require(:test).permit(:title, :level, :category_id, :author_id)
   end
 
-  def complete_test_params
-    author_id = User.by_email(params[:test][:author]).first.id
-    test_params.merge(author_id: author_id)
+  def test_params
+    author = User.by_email(params[:test][:author]).first
+
+    return permit_test_params.merge(author_id: author.id) if author.is_a?(User)
+    permit_test_params
+  end
+
+  def rescue_with_test_not_found
+    render plain: 'Test was not found'
   end
 end
