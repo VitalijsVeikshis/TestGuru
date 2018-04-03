@@ -12,7 +12,7 @@ class TestsController < ApplicationController
 
   def new
     @test = Test.new
-    @author = nil
+    @author
   end
 
   def create
@@ -26,7 +26,7 @@ class TestsController < ApplicationController
   end
 
   def edit
-    @author = User.find(@test.author_id)
+    @author = @test.author
   end
 
   def update
@@ -55,7 +55,7 @@ class TestsController < ApplicationController
   def test_params
     author = User.by_email(params[:test][:author]).first
 
-    return permit_test_params.merge(author_id: author.id) if author.is_a?(User)
+    return permit_test_params.merge(author_id: author.id) if author
     permit_test_params
   end
 
