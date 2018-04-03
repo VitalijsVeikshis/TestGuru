@@ -12,7 +12,6 @@ class TestsController < ApplicationController
 
   def new
     @test = Test.new
-    @author
   end
 
   def create

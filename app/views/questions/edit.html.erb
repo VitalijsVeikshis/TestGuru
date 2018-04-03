@@ -1,8 +1,8 @@
 <h1><%= question_header(@question) %></h1>
 <h2><%= @question.body %></h2>
 
-<%= render 'form', url: question_url_with_test_id(@question) %>
+<%= render 'form' %>
 
 <p>
-  <%= link_to 'Back to test', test_path(@test) %>
+  <%= link_to 'Back to test', test_path(@question.test) %>
 </p>

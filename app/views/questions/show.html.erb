@@ -4,6 +4,6 @@
 </p>
 
 <p>
-  <%= link_to 'Edit', edit_question_url_with_test_id(@question) %> |
-  <%= link_to 'Back to test', test_path(@test) %>
+  <%= link_to 'Edit', edit_question_path(@question) %> |
+  <%= link_to 'Back to test', test_path(@question.test) %>
 </p>
