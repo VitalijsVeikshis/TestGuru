@@ -1,9 +1,3 @@
-<form action="<%= test_questions_path(@test) %>" method="post">
-  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-  <p>
-    <label for="question-body">Question:</label>
-    <input type="text" name="question[body]" id="question-body">
-  </p><br>
+<h1><%= question_header(@question) %></h1>
 
-  <input type="submit" value="Create">
-</form>
+<%= render 'form' %>
