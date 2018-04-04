@@ -1,0 +1,15 @@
+<h1>The <%= @test_passage.test.title %> Test was Completed!</h1>
+
+<h2><%= congratulation %></h2>
+
+<p>
+  Your result is
+
+  <%= tag.span class: result_color do %>
+    <%= @test_passage.current_result.round %>%
+  <% end %>
+</p>
+
+<p>
+  <%= link_to 'Back to tests', tests_path %>
+</p>
