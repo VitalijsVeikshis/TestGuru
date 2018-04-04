@@ -1,5 +1,6 @@
 class Answer < ApplicationRecord
   belongs_to :question
+  has_many :attempts
 
   validates :body, presence: true
   validate :validate_max_answer_quantity, on: :create

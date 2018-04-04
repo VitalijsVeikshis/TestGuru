@@ -84,14 +84,14 @@ TestPassage.create!(
 
 Answer.create!(
   [
-    { body: 'Ruby 1 true',
-      correct: true,
-      question_id: list_of_questions[0].id },
     { body: 'Ruby 1 wrong 1',
       correct: false,
       question_id: list_of_questions[0].id },
     { body: 'Ruby 1 wrong 2',
       correct: false,
+      question_id: list_of_questions[0].id },
+    { body: 'Ruby 1 true',
+      correct: true,
       question_id: list_of_questions[0].id },
     { body: 'Ruby 1 wrong 3',
       correct: false,

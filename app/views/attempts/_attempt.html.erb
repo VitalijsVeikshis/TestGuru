@@ -1,0 +1,10 @@
+<li>
+  <%= attempt.answer.question.body %><br>
+  <p>
+    <% attempt.answer.question.answers.each do |answer| %>
+      <%= tag.span  class: attempt_color(answer, attempt) do %>
+        <%= answer.body %>
+      <% end %><br>
+    <% end %>
+  </p>
+</li>
