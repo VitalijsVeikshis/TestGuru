@@ -5,21 +5,21 @@ class TestPassage < ApplicationRecord
   has_many :attempts
 
   before_validation :before_validation_set_first_question, on: :create
-  before_update :before_save_next_question, on: :update
+  before_update :before_save_next_question
 
   def completed?
     current_question.nil?
   end
 
   def accept!(answer_ids)
-    create_attempts(answer_ids) if answer_ids
+    create_attempts(answer_ids)
 
     self.correct_questions += 1 if correct_answer?(answer_ids)
 
     save!
   end
 
-  def success?(percent)
+  def success?(percent = 85)
     current_result >= percent
   end
 
@@ -38,7 +38,7 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort if answer_ids
+    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
   end
 
   def correct_answers
