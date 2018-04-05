@@ -1,10 +1,16 @@
 <li>
   <%= attempt.answer.question.body %><br>
-  <p>
-    <% attempt.answer.question.answers.each do |answer| %>
-      <%= tag.span  class: attempt_color(answer, attempt) do %>
-        <%= answer.body %>
-      <% end %><br>
+  <table>
+    <%= collection_check_boxes :answer, :id, attempt.answer.question.answers, :id, :body, include_hidden: false do |b| %>
+      <tr class="<%= color(b.object, attempt) %>">
+        <td>
+          <%= b.check_box disabled: true, checked: b.object == attempt.answer %>
+          <%= b.label %>
+        </td>
+        <td>
+          <%= comment(b.object, attempt) %>
+        </td>
+      </tr>
     <% end %>
-  </p>
+  </table>
 </li>
