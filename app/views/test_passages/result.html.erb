@@ -1,17 +1,17 @@
 <h1>The <%= @test_passage.test.title %> Test was Completed!</h1>
 
-<h2><%= congratulation(@test_passage.success?) %></h2>
+<h2><%= congratulation(@test_passage) %></h2>
 
 <p>
   Your result is
 
-  <%= tag.span class: result_color(@test_passage.success?) do %>
+  <%= tag.span class: result_color(@test_passage) do %>
     <%= @test_passage.current_result.round %>%
   <% end %>
 </p>
 
 <ol>
-  <%= render @test_passage.attempts %>
+  <%= render @test_passage.user_answers %>
 </ol>
 
 <p>

@@ -1,6 +1,6 @@
-class CreateAttempts < ActiveRecord::Migration[5.1]
+class CreateUserAnswers < ActiveRecord::Migration[5.1]
   def change
-    create_table :attempts do |t|
+    create_table :user_answers do |t|
       t.references :test_passage, foreign_key: true
       t.references :answer, foreign_key: true
 
