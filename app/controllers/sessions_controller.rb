@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to session[:return_to]
+      redirect_to session[:return_to] ? session[:return_to] : root_path
     else
       flash.now[:alert] = helpers.alert_message(:login)
       render :new
