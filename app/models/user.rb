@@ -3,7 +3,12 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :created_tests, class_name: 'Test', foreign_key: 'author_id'
 
-  validates :email, presence: true
+  has_secure_password
+
+  validates :email,
+            presence: true,
+            uniqueness: true,
+            'valid_email_2/email': true
 
   scope :authors, -> { joins(:created_tests) }
   scope :by_email, ->(email) { where(email: email) }

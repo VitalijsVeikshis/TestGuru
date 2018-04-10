@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+def User.digest(string)
+  BCrypt::Password.create(string)
+end
+
 list_of_categories = Category.create!(
   [
     { title: 'Frontend' },
@@ -16,10 +20,14 @@ list_of_categories = Category.create!(
 
 list_of_users = User.create!(
   [
-    { email: 'User1@m.com' },
-    { email: 'User2@m.com' },
-    { email: 'User3@m.com' },
-    { email: 'User4@m.com' }
+    { email: 'User1@m.com',
+      password_digest: User.digest('1') },
+    { email: 'User2@m.com',
+      password_digest: User.digest('2') },
+    { email: 'User3@m.com',
+      password_digest: User.digest('3') },
+    { email: 'User4@m.com',
+      password_digest: User.digest('4') }
   ]
 )
 

@@ -2,9 +2,6 @@ class QuestionsController < ApplicationController
   before_action :set_test, only: %i[index new create]
   before_action :set_question, only: %i[show edit update destroy]
 
-  rescue_from ActiveRecord::RecordNotFound,
-              with: :rescue_with_question_not_found
-
   def index
     redirect_to test_path(@test)
   end

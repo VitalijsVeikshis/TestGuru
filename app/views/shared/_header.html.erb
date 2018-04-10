@@ -1,0 +1,9 @@
+<span>
+  <%= link_to 'TestGuru', root_path %>
+</span>
+
+<% if logged_in? %>
+  <span class="nav user">Welcome, <b><%= current_user.email %></b> Guru<br>
+    <%= link_to 'Sign out', signout_path, method: 'delete' %>
+  </span>
+<% end %>

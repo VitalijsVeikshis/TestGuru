@@ -1,0 +1,14 @@
+<h1>TestGuru - FROM the Guru FOR the Guru!</h1>
+
+<h3>We have for you <%= pluralize(Test.all.count, 'test') %> with <%= pluralize(Question.all.count, 'question') %>.</h3>
+
+<% if logged_in? %>
+  <p>
+    <%= link_to 'Tests', tests_path %>
+  </p>
+<% else %>
+  <p>
+    <%= link_to 'Log in', login_path %> |
+    <%= link_to 'Create an account', signup_path %>
+  </p>
+<% end %>
