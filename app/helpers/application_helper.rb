@@ -1,6 +1,12 @@
 module ApplicationHelper
-  ALERTS = {
-    login: 'Are you a Guru? Verify your Email and Password please'
+  FLASH_MESSAGES = {
+    alert: {
+      login: 'Are you a Guru? Verify your Email and Password please'
+    },
+    notice: {
+      login: 'Login Sccessful',
+      signup: 'Registration Successful'
+    }
   }.freeze
 
   def current_year
@@ -11,7 +17,7 @@ module ApplicationHelper
     link_to 'TestGuru', "https://github.com/#{author}/#{repo}", target: '_blank'
   end
 
-  def alert_message(alert)
-    ALERTS[alert]
+  def flash_message(type, message)
+    FLASH_MESSAGES[type][message]
   end
 end
