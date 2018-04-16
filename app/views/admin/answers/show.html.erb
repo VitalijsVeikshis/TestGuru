@@ -1,0 +1,11 @@
+<h2>
+  <%= @answer.question.body %>
+</h2>
+
+<p>
+  <%= @answer.body %>
+</p>
+
+<p>
+  <%= link_to 'Back', [:admin, @answer.question] %>
+</p>
