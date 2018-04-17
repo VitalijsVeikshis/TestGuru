@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-def User.digest(string)
-  BCrypt::Password.create(string)
+def get_password(char)
+  Array.new(6, char).join('')
 end
 
 list_of_categories = Category.create!(
@@ -21,13 +21,27 @@ list_of_categories = Category.create!(
 list_of_users = User.create!(
   [
     { email: 'User1@m.com',
-      password_digest: User.digest('1') },
+      password: get_password('1'),
+      password_confirmation: get_password('1'),
+      first_name: 'user1_name',
+      last_name: 'user1_lastname' },
     { email: 'User2@m.com',
-      password_digest: User.digest('2') },
+      password: get_password('2'),
+      password_confirmation: get_password('2'),
+      first_name: 'user2_name',
+      last_name: 'user2_lastname' },
     { email: 'User3@m.com',
-      password_digest: User.digest('3') },
+      password: get_password('3'),
+      password_confirmation: get_password('3'),
+      type: 'Admin',
+      first_name: 'user3_name',
+      last_name: 'user3_lastname' },
     { email: 'User4@m.com',
-      password_digest: User.digest('4') }
+      password: get_password('4'),
+      password_confirmation: get_password('4'),
+      type: 'Admin',
+      first_name: 'user4_name',
+      last_name: 'user4_lastname' }
   ]
 )
 
@@ -52,7 +66,7 @@ list_of_tests = Test.create!(
     { title: 'Java',
       level: 3,
       category_id: list_of_categories[1].id,
-      author_id: list_of_users[0].id }
+      author_id: list_of_users[3].id }
   ]
 )
 
