@@ -1,18 +1,5 @@
 ---
 en:
-  main:
-    index:
-      header: TestGuru - FROM the Guru FOR the Guru!
-      tests:
-        one: We have for you %{count} test
-        other: We have for you %{count} tests
-      questions:
-        one: with %{count} question.
-        other: with %{count} questions.
-      link_to:
-        tests: Tests
-        login: Log in
-        signup: Create an account
   admin:
     answers:
       answer:
@@ -115,14 +102,27 @@ en:
         create: Create test
         update: Update test
     test_passages:
-      pass: The test is successfully passed!
       miss: The test isn't passed!
+      pass: The test is successfully passed!
+  main:
+    index:
+      header: TestGuru - FROM the Guru FOR the Guru!
+      link_to:
+        login: Log in
+        signup: Create an account
+        tests: Tests
+      questions:
+        one: with %{count} question.
+        other: with %{count} questions.
+      tests:
+        one: We have for you %{count} test
+        other: We have for you %{count} tests
   test_passages:
     result:
       header: The %{test_title} Test was Completed!
-      result_p: Your result is
       link_to:
         back: Back to tests
+      result_p: Your result is
     show:
       header: Passing the %{test_title} Test
       next: Next

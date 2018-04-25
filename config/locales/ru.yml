@@ -1,22 +1,5 @@
 ---
 ru:
-  main:
-    index:
-      header: TestGuru - ОТ гуру ДЛЯ гуру!
-      tests:
-        one: Мы имеем для Вас %{count} тест
-        few: Мы имеем для Вас %{count} теста
-        many: Мы имеем для Вас %{count} тестов
-        other: We have for you %{count} теста
-      questions:
-        one: с %{count} вопросом.
-        few: с %{count} вопросами.
-        many: с %{count} вопросами.
-        other: с %{count} вопросами.
-      link_to:
-        tests: Тесты
-        login: Вход
-        signup: Зарегистрироваться
   admin:
     answers:
       answer:
@@ -102,8 +85,6 @@ ru:
           edit: Редактировать
           show: Показать
   helpers:
-    select:
-      promt: Пожалуйста, выберите
     label:
       answer:
         body: Ответ
@@ -114,6 +95,8 @@ ru:
         category_id: Категория
         level: Уровень
         title: Название
+    select:
+      promt: Пожалуйста, выберите
     submit:
       answer:
         create: Добавить ответ
@@ -125,14 +108,38 @@ ru:
         create: Создать тест
         update: Обновить тест
     test_passages:
-      pass: Тест успешно пройден!
       miss: Тест не пройден!
+      pass: Тест успешно пройден!
+  main:
+    index:
+      header: TestGuru - ОТ гуру ДЛЯ гуру!
+      link_to:
+        login: Вход
+        signup: Зарегистрироваться
+        tests: Тесты
+      questions:
+        few: с %{count} вопросами.
+        many: с %{count} вопросами.
+        one: с %{count} вопросом.
+        other: с %{count} вопросами.
+      tests:
+        few: Мы имеем для Вас %{count} теста
+        many: Мы имеем для Вас %{count} тестов
+        one: Мы имеем для Вас %{count} тест
+        other: We have for you %{count} теста
+  shared:
+    errors:
+      header:
+        few: Обнаружено %{count} ошибки
+        many: Обнаружено %{count} ошибок
+        one: Обнаружена %{count} ошибка
+        other: Обнаружено %{count} ошибки
   test_passages:
     result:
       header: Тест %{test_title} завершен!
-      result_p: Ваш результат
       link_to:
         back: Назад к тестам
+      result_p: Ваш результат
     show:
       header: Прохождение теста %{test_title}
       next: Следующий
@@ -160,10 +167,3 @@ ru:
         delete: Удалить
         edit: Редактировать
         show: Показать
-  shared:
-      errors:
-        header:
-          few: "Обнаружено %{count} ошибки"
-          one: "Обнаружена %{count} ошибка"
-          many: "Обнаружено %{count} ошибок"
-          other: "Обнаружено %{count} ошибки"
