@@ -57,8 +57,12 @@ en:
         header: Tests
         link_to:
           add: Add new test
+          delete: Delete!
+          edit: Edit!
+          show: Show!
         table:
           actions: Actions
+          author: Author
           level: Level
           question: Questions
           test: Test
@@ -71,11 +75,30 @@ en:
         table:
           actions: Actions
           questions: Questions
+  helpers:
+    label:
+      answer:
+        body: Body
+        correct: Correct
+      question:
+        body: Body
       test:
-        link_to:
-          delete: Delete
-          edit: Edit
-          show: Show
+        category_id: Category
+        level: Level
+        title: Title
+    submit:
+      answer:
+        create: Add answer
+        update: Update answer
+      question:
+        create: Add question
+        update: Update question
+      test:
+        create: Create test
+        update: Update test
+    test_passages:
+      miss: The test isn't passed!
+      pass: The test is successfully passed!
   main:
     index:
       header: TestGuru - FROM the Guru FOR the Guru!
@@ -101,6 +124,10 @@ en:
   tests:
     index:
       header: Tests
+      levels:
+        easy: Easy
+        hard: Hard
+        normal: Normal
       table:
         actions: Actions
         author: Author
@@ -110,3 +137,11 @@ en:
     test:
       buttons:
         start: Start
+      levels:
+        easy: Easy
+        hard: Hard
+        normal: Normal
+      link_to:
+        delete: Delete
+        edit: Edit
+        show: Show
