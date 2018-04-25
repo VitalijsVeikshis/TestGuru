@@ -57,12 +57,8 @@ ru:
         header: Тесты
         link_to:
           add: Создать новый тест
-          delete: Удалить
-          edit: Редактировать
-          show: Показать
         table:
           actions: Действия
-          author: Автор
           level: Уровень
           question: Количество вопросов
           test: Тест
@@ -70,46 +66,16 @@ ru:
         header: Создание нового теста
       show:
         link_to:
-          add: Добавить новыйвопрос
+          add: Добавить новый вопрос
           back: Назад к списку тестов
         table:
           actions: Действия
           questions: Вопросы
       test:
-        levels:
-          easy: Легкий
-          hard: Сложный
-          normal: Нормальный
         link_to:
           delete: Удалить
           edit: Редактировать
           show: Показать
-  helpers:
-    label:
-      answer:
-        body: Ответ
-        correct: Правильный
-      question:
-        body: Вопрос
-      test:
-        category_id: Категория
-        level: Уровень
-        title: Название
-    select:
-      promt: Пожалуйста, выберите
-    submit:
-      answer:
-        create: Добавить ответ
-        update: Обновить ответ
-      question:
-        create: Добавить вопрос
-        update: Обновить вопрос
-      test:
-        create: Создать тест
-        update: Обновить тест
-    test_passages:
-      miss: Тест не пройден!
-      pass: Тест успешно пройден!
   main:
     index:
       header: TestGuru - ОТ гуру ДЛЯ гуру!
@@ -127,13 +93,6 @@ ru:
         many: Мы имеем для Вас %{count} тестов
         one: Мы имеем для Вас %{count} тест
         other: We have for you %{count} теста
-  shared:
-    errors:
-      header:
-        few: Обнаружено %{count} ошибки
-        many: Обнаружено %{count} ошибок
-        one: Обнаружена %{count} ошибка
-        other: Обнаружено %{count} ошибки
   test_passages:
     result:
       header: Тест %{test_title} завершен!
@@ -146,10 +105,6 @@ ru:
   tests:
     index:
       header: Тесты
-      levels:
-        easy: Легкий
-        hard: Сложный
-        normal: Нормальный
       table:
         actions: Действия
         author: Автор
@@ -159,11 +114,3 @@ ru:
     test:
       buttons:
         start: Начать
-      levels:
-        easy: Легкий
-        hard: Сложный
-        normal: Нормальный
-      link_to:
-        delete: Удалить
-        edit: Редактировать
-        show: Показать
