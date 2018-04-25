@@ -1,14 +1,14 @@
-<h1>TestGuru - FROM the Guru FOR the Guru!</h1>
+<h1><%= t('.header') %></h1>
 
-<h3>We have for you <%= pluralize(Test.all.count, 'test') %> with <%= pluralize(Question.all.count, 'question') %>.</h3>
+<h3><%= t('.tests', count: Test.all.count) %> <%= t('.questions', count: Question.all.count) %></h3>
 
 <% if user_signed_in? %>
   <p>
-    <%= link_to 'Tests', current_user.is_a?(Admin) ? admin_tests_path : tests_path %>
+    <%= link_to t('.link_to.tests'), current_user.admin? ? admin_tests_path : tests_path %>
   </p>
 <% else %>
   <p>
-    <%= link_to 'Log in', user_session_path %> |
-    <%= link_to 'Create an account', new_user_registration_path %>
+    <%= link_to t('.link_to.login'), user_session_path %> |
+    <%= link_to t('.link_to.signup'), new_user_registration_path %>
   </p>
 <% end %>

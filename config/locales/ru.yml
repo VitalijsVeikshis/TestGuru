@@ -1,0 +1,169 @@
+---
+ru:
+  main:
+    index:
+      header: TestGuru - ОТ гуру ДЛЯ гуру!
+      tests:
+        one: Мы имеем для Вас %{count} тест
+        few: Мы имеем для Вас %{count} теста
+        many: Мы имеем для Вас %{count} тестов
+        other: We have for you %{count} теста
+      questions:
+        one: с %{count} вопросом.
+        few: с %{count} вопросами.
+        many: с %{count} вопросами.
+        other: с %{count} вопросами.
+      link_to:
+        tests: Тесты
+        login: Вход
+        signup: Зарегистрироваться
+  admin:
+    answers:
+      answer:
+        confirm:
+          delete: Вы уверены?
+        link_to:
+          delete: Удалить
+          edit: Редактировать
+          show: Показать
+      edit:
+        header: Редактирование ответа
+        link_to:
+          back: Назад к вопросам
+      new:
+        header: Новый ответ
+        link_to:
+          back: Назад к вопросам
+      show:
+        link_to:
+          back: Назад к вопросам
+    nav:
+      header: Панель администратора TestGuru
+      link_to:
+        logout: Выйти
+      welcome:
+        html: Добро пожаловать, <b class="nav-admin user-email">%{email}</b> Guru
+    questions:
+      edit:
+        header: Редактирование вопроса из теста %{test_title}
+      form:
+        link_to:
+          back: Назад к тесту
+      new:
+        header: Создание нового вопроса для теста %{test_title}
+      question:
+        confirm:
+          delete: Вы уверены?
+        link_to:
+          delete: Удалить
+          edit: Редактировать
+          show: Показать
+      show:
+        header: Ответы
+        link_to:
+          back: Назад к тесту
+          edit: Редактировать
+          new: Новый ответ
+    tests:
+      edit:
+        header: Редактирование теста %{title}
+      form:
+        link_to:
+          back: Назад к списку тестов
+      index:
+        header: Тесты
+        link_to:
+          add: Создать новый тест
+          delete: Удалить
+          edit: Редактировать
+          show: Показать
+        table:
+          actions: Действия
+          author: Автор
+          level: Уровень
+          question: Количество вопросов
+          test: Тест
+      new:
+        header: Создание нового теста
+      show:
+        link_to:
+          add: Добавить новыйвопрос
+          back: Назад к списку тестов
+        table:
+          actions: Действия
+          questions: Вопросы
+      test:
+        levels:
+          easy: Легкий
+          hard: Сложный
+          normal: Нормальный
+        link_to:
+          delete: Удалить
+          edit: Редактировать
+          show: Показать
+  helpers:
+    select:
+      promt: Пожалуйста, выберите
+    label:
+      answer:
+        body: Ответ
+        correct: Правильный
+      question:
+        body: Вопрос
+      test:
+        category_id: Категория
+        level: Уровень
+        title: Название
+    submit:
+      answer:
+        create: Добавить ответ
+        update: Обновить ответ
+      question:
+        create: Добавить вопрос
+        update: Обновить вопрос
+      test:
+        create: Создать тест
+        update: Обновить тест
+    test_passages:
+      pass: Тест успешно пройден!
+      miss: Тест не пройден!
+  test_passages:
+    result:
+      header: Тест %{test_title} завершен!
+      result_p: Ваш результат
+      link_to:
+        back: Назад к тестам
+    show:
+      header: Прохождение теста %{test_title}
+      next: Следующий
+  tests:
+    index:
+      header: Тесты
+      levels:
+        easy: Легкий
+        hard: Сложный
+        normal: Нормальный
+      table:
+        actions: Действия
+        author: Автор
+        level: Уровень
+        question: Вопросов
+        test: Тест
+    test:
+      buttons:
+        start: Начать
+      levels:
+        easy: Легкий
+        hard: Сложный
+        normal: Нормальный
+      link_to:
+        delete: Удалить
+        edit: Редактировать
+        show: Показать
+  shared:
+      errors:
+        header:
+          few: "Обнаружено %{count} ошибки"
+          one: "Обнаружена %{count} ошибка"
+          many: "Обнаружено %{count} ошибок"
+          other: "Обнаружено %{count} ошибки"

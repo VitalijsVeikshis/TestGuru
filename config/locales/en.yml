@@ -1,33 +1,152 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
+---
 en:
-  hello: "Hello world"
+  main:
+    index:
+      header: TestGuru - FROM the Guru FOR the Guru!
+      tests:
+        one: We have for you %{count} test
+        other: We have for you %{count} tests
+      questions:
+        one: with %{count} question.
+        other: with %{count} questions.
+      link_to:
+        tests: Tests
+        login: Log in
+        signup: Create an account
+  admin:
+    answers:
+      answer:
+        confirm:
+          delete: Are you sure?
+        link_to:
+          delete: Delete
+          edit: Edit
+          show: Show
+      edit:
+        header: Edit Answer
+        link_to:
+          back: Back to question
+      new:
+        header: New Answer
+        link_to:
+          back: Back to question
+      show:
+        link_to:
+          back: Back to question
+    nav:
+      header: TestGuru Admin Panel
+      link_to:
+        logout: Logout
+      welcome:
+        html: Welcome, <b class="nav-admin user-email">%{email}</b> Guru
+    questions:
+      edit:
+        header: Edit %{test_title} Question
+      form:
+        link_to:
+          back: Back to test
+      new:
+        header: Create New %{test_title} Question
+      question:
+        confirm:
+          delete: Are you sure?
+        link_to:
+          delete: Delete
+          edit: Edit
+          show: Show
+      show:
+        header: Answers
+        link_to:
+          back: Back to test
+          edit: Edit
+          new: New Answer
+    tests:
+      edit:
+        header: Edit %{title} Test
+      form:
+        link_to:
+          back: Back to tests
+      index:
+        header: Tests
+        link_to:
+          add: Add new test
+          delete: Delete!
+          edit: Edit!
+          show: Show!
+        table:
+          actions: Actions
+          author: Author
+          level: Level
+          question: Questions
+          test: Test
+      new:
+        header: Create New Test
+      show:
+        link_to:
+          add: Add new question
+          back: Back to test list
+        table:
+          actions: Actions
+          questions: Questions
+      test:
+        levels:
+          easy: Easy!
+          hard: Hard!
+          normal: Normal!
+  helpers:
+    label:
+      answer:
+        body: Body
+        correct: Correct
+      question:
+        body: Body
+      test:
+        category_id: Category
+        level: Level
+        title: Title
+    submit:
+      answer:
+        create: Add answer
+        update: Update answer
+      question:
+        create: Add question
+        update: Update question
+      test:
+        create: Create test
+        update: Update test
+    test_passages:
+      pass: The test is successfully passed!
+      miss: The test isn't passed!
+  test_passages:
+    result:
+      header: The %{test_title} Test was Completed!
+      result_p: Your result is
+      link_to:
+        back: Back to tests
+    show:
+      header: Passing the %{test_title} Test
+      next: Next
+  tests:
+    index:
+      header: Tests
+      levels:
+        easy: Easy
+        hard: Hard
+        normal: Normal
+      table:
+        actions: Actions
+        author: Author
+        level: Level
+        question: Questions
+        test: Test
+    test:
+      buttons:
+        start: Start
+      levels:
+        easy: Easy
+        hard: Hard
+        normal: Normal
+      link_to:
+        delete: Delete
+        edit: Edit
+        show: Show
