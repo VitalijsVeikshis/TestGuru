@@ -1,7 +1,9 @@
-<footer>
-  <p>
-    <%= current_year %>, Vitaliy Veykshis<br>
-    <%= github_url('VitaliyVeykshis', 'TestGuru') %>,
-    <%= link_to 'Учебный проект в онлайн-школе Thinknetica', 'http://thinknetica.com/', target: '_blank' %>
-  </p>
+<footer class="fixed-bottom bg-dark">
+  <div class="container text-center mt-3">
+    <p class="text-white">
+      &copy; <%= current_year %> Vitaliy Veykshis.
+      <%= github_url('VitaliyVeykshis', 'TestGuru') %>,
+      <%= link_to 'Учебный проект в онлайн-школе Thinknetica', 'http://thinknetica.com/', target: '_blank', class: 'text-white' %>
+    </p>
+  </div>
 </footer>

@@ -1,10 +1,12 @@
 <h1><%= @test.title %></h1>
 
-<table>
-  <tr>
-    <th><%= t('.table.questions') %></th>
-    <th colspan="3"><%= t('.table.actions') %></th>
-  </tr>
+<table class="table table-hover table-sm">
+  <thead class="thead-light">
+    <tr>
+      <th><%= t('.table.questions') %></th>
+      <th colspan="3" class="text-center" style="width: 20%"><%= t('.table.actions') %></th>
+    </tr>
+  </thead>
 
   <%= render @test.questions %>
 </table>
