@@ -1,9 +1,11 @@
 module TestPassagesHelper
+  SCOPE = %i[helpers test_passages].freeze
+
   def congratulation(test_passage)
     if test_passage.success?
-      'The test is successfully passed!'
+      I18n.t('.pass', scope: SCOPE)
     else
-      "The test isn't passed!"
+      I18n.t('.miss', scope: SCOPE)
     end
   end
 

@@ -1,16 +1,16 @@
-<h1>Tests</h1>
+<h1><%= t('.header') %></h1>
 
 <table>
   <tr>
-    <th>Test</th>
-    <th>Questions</th>
-    <th>Level</th>
-    <th colspan="3">Actions</th>
+    <th><%= t('.table.test')%></th>
+    <th><%= t('.table.question')%></th>
+    <th><%= t('.table.level')%></th>
+    <th colspan="3"><%= t('.table.actions')%></th>
   </tr>
 
   <%= render @tests %>
 </table>
 
 <p>
-  <%= link_to 'Add new test', new_admin_test_path(@test) %><br>
+  <%= link_to t('.link_to.add'), new_admin_test_path(@test) %><br>
 </p>

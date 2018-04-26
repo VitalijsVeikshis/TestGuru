@@ -13,12 +13,12 @@
 
   <p>
     <%= form.label :category_id %><br>
-    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
+    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true, id: :test_category_id %>
   </p>
 
   <p><%= form.submit %></p>
 <% end %>
 
 <p>
-  <%= link_to 'Back to tests', admin_tests_path %>
+  <%= link_to t('.link_to.back'), admin_tests_path %>
 </p>
