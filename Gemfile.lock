@@ -70,6 +70,8 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.6.2)
+      devise (>= 4.4)
     easy_translate (0.5.1)
       thread
       thread_safe
@@ -224,6 +226,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   devise (~> 4.0)
+  devise-i18n
   i18n-tasks
   jbuilder (~> 2.5)
   letter_opener

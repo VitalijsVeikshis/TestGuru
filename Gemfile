@@ -42,6 +42,8 @@ gem 'valid_email2'
 # AUTH
 
 gem 'devise', '~> 4.0'
+# Devise Localization
+gem 'devise-i18n'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
