@@ -27,6 +27,6 @@ module ApplicationHelper
   end
 
   def flash_style(type)
-    FLASH_STYLES[type]
+    FLASH_STYLES[type.to_sym]
   end
 end

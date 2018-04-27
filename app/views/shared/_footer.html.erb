@@ -1,6 +1,11 @@
 <footer class="fixed-bottom bg-dark">
-  <div class="container text-center mt-3">
-    <p class="text-white">
+  <div class="container text-center mt-3 text-white">
+    <p>
+      <%= form_with url: request.path_info, class: "float-right" do |form| %>
+        <%= form.label :lang, t('.language_label') %>
+        <%= form.select :lang, options_for_select({ t('.languages.en') => :en, t('.languages.ru') => :ru }, selected: I18n.locale), onChange: "this.form.submit();" %>
+      <% end %>
+
       &copy; <%= current_year %> Vitaliy Veykshis.
       <%= github_url('VitaliyVeykshis', 'TestGuru') %>,
       <%= link_to 'Учебный проект в онлайн-школе Thinknetica', 'http://thinknetica.com/', target: '_blank', class: 'text-white' %>

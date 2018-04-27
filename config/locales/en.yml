@@ -1,5 +1,11 @@
 ---
 en:
+  shared:
+    footer:
+      languages:
+        en: English
+        ru: Russian
+      language_label: "Language:"
   admin:
     answers:
       answer:
