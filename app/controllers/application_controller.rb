@@ -14,15 +14,22 @@ class ApplicationController < ActionController::Base
   end
 
   def default_url_options
-    I18n.locale == I18n.default_locale ? {} : { lang: I18n.locale }
+    # I18n.default_locale ? {} : { lang: I18n.locale }
+    { lang: I18n.locale }
   end
 
   def set_locale
     I18n.locale = locale_available? ? params[:lang] : I18n.default_locale
+
+    redirect_to new_lang_url if params[:set_lang]
   end
 
   def locale_available?
     I18n.locale_available?(params[:lang])
+  end
+
+  def new_lang_url
+    request.params.merge(lang: params[:set_lang]).except(:set_lang)
   end
 
   protected

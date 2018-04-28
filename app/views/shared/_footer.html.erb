@@ -1,9 +1,9 @@
 <footer class="fixed-bottom bg-dark">
   <div class="container text-center mt-3 text-white">
     <p>
-      <%= form_with url: request.path_info, class: "float-right" do |form| %>
-        <%= form.label :lang, t('.language_label') %>
-        <%= form.select :lang, options_for_select({ t('.languages.en') => :en, t('.languages.ru') => :ru }, selected: I18n.locale), onChange: "this.form.submit();" %>
+      <%= form_with path: request.path, method: :get, local: true, class: "float-right" do |form| %>
+        <%= form.label :set_lang, t('.language_label') %>
+        <%= form.select :set_lang, options_for_select({ t('.languages.en') => :en, t('.languages.ru') => :ru }, selected: I18n.locale), {}, onchange: 'this.form.submit();' %>
       <% end %>
 
       &copy; <%= current_year %> Vitaliy Veykshis.
