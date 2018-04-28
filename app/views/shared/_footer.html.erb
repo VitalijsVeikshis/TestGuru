@@ -1,7 +1,14 @@
-<footer>
-  <p>
-    <%= current_year %>, Vitaliy Veykshis<br>
-    <%= github_url('VitaliyVeykshis', 'TestGuru') %>,
-    <%= link_to 'Учебный проект в онлайн-школе Thinknetica', 'http://thinknetica.com/', target: '_blank' %>
-  </p>
+<footer class="fixed-bottom bg-dark">
+  <div class="container text-center mt-3 text-white">
+    <p>
+      <%= form_with path: request.path, method: :get, local: true, class: "float-right" do |form| %>
+        <%= form.label :set_lang, t('.language_label') %>
+        <%= form.select :set_lang, options_for_select({ t('.languages.en') => :en, t('.languages.ru') => :ru }, selected: I18n.locale), {}, onchange: 'this.form.submit();' %>
+      <% end %>
+
+      &copy; <%= current_year %> Vitaliy Veykshis.
+      <%= github_url('VitaliyVeykshis', 'TestGuru') %>,
+      <%= link_to 'Учебный проект в онлайн-школе Thinknetica', 'http://thinknetica.com/', target: '_blank', class: 'text-white' %>
+    </p>
+  </div>
 </footer>

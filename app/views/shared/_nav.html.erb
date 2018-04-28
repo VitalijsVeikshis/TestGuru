@@ -1,9 +1,16 @@
-<span>
-  <%= link_to 'TestGuru', root_path %>
-</span>
+<nav class="navbar <%= current_user&.admin? ? 'navbar-dark bg-primary' : 'navbar-light bg-light' %>">
+  <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
 
-<% if user_signed_in? %>
-  <span class="nav user">Welcome, <b><%= current_user.email %></b> Guru |
-    <%= link_to 'Logout', destroy_user_session_path, method: 'delete' %>
+  <span class="navbar-text">
+    <% if user_signed_in? %>
+      Welcome, <b><%= current_user.email %></b> Guru |
+      <% if current_user.admin? %>
+        <%= link_to 'Settings', admin_tests_path %> |
+      <% end %>
+      <%= link_to 'Log out', destroy_user_session_path, method: 'delete' %>
+    <% else %>
+      <%= link_to 'Log in', new_user_session_path %> |
+      <%= link_to 'Sign up', new_user_registration_path %>
+    <% end %>
   </span>
-<% end %>
+</nav>

@@ -1,8 +1,0 @@
-<div class="nav nav-admin">
-  <span class="nav-admin title"><%= t('.header') %></span>
-
-  <div class="nav-admin user">
-    <%= t('.welcome.html', email: current_user.email) %> |
-    <%= link_to t('.link_to.logout'), destroy_user_session_path, method: :delete %>
-  </div>
-</div>

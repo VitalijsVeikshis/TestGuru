@@ -10,3 +10,8 @@
   font-weight: bold;
   color: red;
 }
+
+.table-borderless td,
+.table-borderless th {
+    border: 0;
+}

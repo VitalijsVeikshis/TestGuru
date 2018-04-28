@@ -1,16 +1,16 @@
 <li>
   <%= user_answer.answer.question.body %><br>
-  <table>
-    <%= collection_check_boxes :answer, :id, user_answer.answer.question.answers, :id, :body, include_hidden: false do |b| %>
-      <tr class="<%= color(b.object, user_answer) %>">
-        <td>
-          <%= b.check_box disabled: true, checked: b.object == user_answer.answer %>
-          <%= b.label %>
-        </td>
-        <td>
-          <%= comment(b.object, user_answer) %>
-        </td>
-      </tr>
-    <% end %>
-  </table>
+    <table class="table table-borderless table-sm table-responsive">
+      <%= collection_check_boxes :answer, :id, user_answer.answer.question.answers, :id, :body, include_hidden: false do |b| %>
+        <tr class="<%= color(b.object, user_answer) %>">
+          <td>
+            <%= b.check_box disabled: true, checked: b.object == user_answer.answer %>
+            <%= b.label %>
+          </td>
+          <td class="text-left">
+            <%= comment(b.object, user_answer) %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
 </li>
