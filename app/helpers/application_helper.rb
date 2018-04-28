@@ -10,8 +10,8 @@ module ApplicationHelper
   }.freeze
 
   FLASH_STYLES = {
-    alert: 'alert alert-danger',
-    notice: 'alert alert-success'
+    alert: 'danger',
+    notice: 'success'
   }.freeze
 
   def current_year
@@ -27,6 +27,6 @@ module ApplicationHelper
   end
 
   def flash_style(type)
-    FLASH_STYLES[type.to_sym]
+    "alert alert-#{FLASH_STYLES[type.to_sym]}"
   end
 end
