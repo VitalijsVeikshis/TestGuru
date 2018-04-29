@@ -3,9 +3,10 @@
 
   <span class="navbar-text">
     <% if user_signed_in? %>
-      Welcome, <b><%= current_user.email %></b> Guru |
+      <%= t('.welcome_html', email: current_user.email) %> |
       <% if current_user.admin? %>
-        <%= link_to 'Settings', admin_tests_path %> |
+        <%= link_to 'Tests', admin_tests_path %> |
+        <%= link_to 'Gists', admin_gists_path %> |
       <% end %>
       <%= link_to 'Log out', destroy_user_session_path, method: 'delete' %>
     <% else %>

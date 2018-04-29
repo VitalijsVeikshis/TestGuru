@@ -1,11 +1,5 @@
 ---
 en:
-  shared:
-    footer:
-      languages:
-        en: English
-        ru: Russian
-      language_label: "Language:"
   admin:
     answers:
       answer:
@@ -26,12 +20,22 @@ en:
       show:
         link_to:
           back: Back to question
+    gists:
+      destroy:
+        failure: An error occurred while deleting gist
+        success: Gist %{hash} was successfully deleted!
+      index:
+        header: Gists
+        table:
+          col1: Question
+          col2: Hash
+          col3: User
+          col4: Action
     nav:
       header: TestGuru Admin Panel
       link_to:
         logout: Logout
-      welcome:
-        html: Welcome, <b class="nav-admin user-email">%{email}</b> Guru
+      welcome_html: Welcome, <b>%{email}</b> Guru
     questions:
       edit:
         header: Edit %{test_title} Question
@@ -67,11 +71,10 @@ en:
           edit: Edit!
           show: Show!
         table:
-          actions: Actions
-          author: Author
-          level: Level
-          question: Questions
-          test: Test
+          col1: Test
+          col2: Questions
+          col3: Level
+          col4: Actions
       new:
         header: Create New Test
       show:
@@ -79,8 +82,10 @@ en:
           add: Add new question
           back: Back to test list
         table:
-          actions: Actions
-          questions: Questions
+          col1: Questions
+          col2: Actions
+  gistquestionservice:
+    about: A question about %{title} from TestGuru
   helpers:
     label:
       answer:
@@ -118,7 +123,19 @@ en:
       tests:
         one: We have for you %{count} test
         other: We have for you %{count} tests
+  shared:
+    footer:
+      language_label: 'Language:'
+      languages:
+        en: English
+        ru: Russian
+      school: The educational project at Thinknetica online school
+    nav:
+      welcome_html: Welcome, <b>%{email}</b> Guru
   test_passages:
+    gist:
+      failure: An error occurred while saving gist
+      success_html: <a href=%{url} target="_blank">Gist</a> was successfully created!
     result:
       header: The %{test_title} Test was Completed!
       link_to:
@@ -135,11 +152,11 @@ en:
         hard: Hard
         normal: Normal
       table:
-        actions: Actions
-        author: Author
-        level: Level
-        question: Questions
-        test: Test
+        col1: Test
+        col2: Questions
+        col3: Level
+        col4: Author
+        col5: Actions
     test:
       buttons:
         start: Start
