@@ -20,9 +20,10 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(question: @test_passage.current_question).call
+    result = GistQuestionService.new(question: @test_passage.current_question)
+                                .call
 
-    flash_options = if result.present?
+    flash_options = if result.is_a?(Sawyer::Resource)
                       create_gist(result)
                       { notice: t('.success_html', url: result.html_url) }
                     else

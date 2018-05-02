@@ -16,7 +16,7 @@ class Admin::QuestionsController < ApplicationController
     @question = @test.questions.new(question_params)
 
     if @question.save
-      redirect_to @question.test
+      redirect_to admin_test_path(@question.test)
     else
       render :new
     end
@@ -26,7 +26,7 @@ class Admin::QuestionsController < ApplicationController
 
   def update
     if @question.update(question_params)
-      redirect_to @question.test
+      redirect_to admin_test_path(@question.test)
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class Admin::QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    redirect_to @question.test
+    redirect_to admin_test_path(@question.test)
   end
 
   private

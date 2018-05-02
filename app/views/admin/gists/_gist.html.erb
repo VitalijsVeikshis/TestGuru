@@ -1,5 +1,5 @@
 <tr>
-  <td><%= link_to gist.question.body[0..25], admin_question_path(gist.question) %></td>
+  <td><%= link_to truncate(gist.question.body, length: 28), admin_question_path(gist.question) %></td>
   <td><%= link_to gist.hash, gist.url  %></td>
   <td><%= gist.user.email %></td>
   <td>

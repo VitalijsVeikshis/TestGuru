@@ -10,10 +10,6 @@ class GistQuestionService
     @client.create_gist(gist_params)
   end
 
-  def delete
-    @client.delete_gist(@hash)
-  end
-
   private
 
   def gist_params

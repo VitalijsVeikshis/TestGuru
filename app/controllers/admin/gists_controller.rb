@@ -6,7 +6,7 @@ class Admin::GistsController < ApplicationController
   end
 
   def destroy
-    result = GistQuestionService.new(hash: @gist.hash).delete
+    result = @gist.delete_from_remote
 
     flash_options = if result
                       @gist.destroy
