@@ -1,14 +1,14 @@
-<footer class="fixed-bottom bg-dark">
+<footer class="fixed-bottom bg-dark footer">
   <div class="container text-center mt-3 text-white">
-    <p>
+    <div>
       <%= form_with path: request.path, method: :get, local: true, class: "float-right" do |form| %>
         <%= form.label :set_lang, t('.language_label') %>
-        <%= form.select :set_lang, options_for_select({ t('.languages.en') => :en, t('.languages.ru') => :ru }, selected: I18n.locale), {}, onchange: 'this.form.submit();' %>
+        <%= form.select :set_lang, options_for_select({ t('.languages.en') => :en, t('.languages.ru') => :ru }, selected: I18n.locale), {}, onchange: 'this.form.submit();', class: "btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" %>
       <% end %>
+    </div>
 
-      &copy; <%= current_year %> Vitaliy Veykshis.
-      <%= github_url('VitaliyVeykshis', 'TestGuru') %>,
-      <%= link_to 'Учебный проект в онлайн-школе Thinknetica', 'http://thinknetica.com/', target: '_blank', class: 'text-white' %>
-    </p>
+    &copy; <%= current_year %> Vitaliy Veykshis.
+    <%= github_url('VitaliyVeykshis', 'TestGuru') %>,
+    <%= link_to t('.school'), 'http://thinknetica.com/', target: '_blank', class: 'text-white' %>
   </div>
 </footer>

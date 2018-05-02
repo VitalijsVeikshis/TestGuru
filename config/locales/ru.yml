@@ -20,12 +20,23 @@ ru:
       show:
         link_to:
           back: Назад к вопросам
+    gists:
+      destroy:
+        failure: Во время удаления gist произошла ошибка
+        success: Gist %{hash} успешно удалён!
+      index:
+        header: Gists
+        table:
+          col1: Вопрос
+          col2: Хэш
+          col3: Пользователь
+          col4: Действие
     nav:
       header: Панель администратора TestGuru
       link_to:
         logout: Выйти
       welcome:
-        html: Добро пожаловать, <b class="nav-admin user-email">%{email}</b> Guru
+        html: Добро пожаловать, <b>%{email}</b> Guru
     questions:
       edit:
         header: Редактирование вопроса из теста %{test_title}
@@ -61,20 +72,19 @@ ru:
           edit: Редактировать
           show: Показать
         table:
-          actions: Действия
-          author: Автор
-          level: Уровень
-          question: Количество вопросов
-          test: Тест
+          col1: Тест
+          col2: Количество вопросов
+          col3: Уровень
+          col4: Действия
       new:
         header: Создание нового теста
       show:
         link_to:
-          add: Добавить новыйвопрос
+          add: Добавить новый вопрос
           back: Назад к списку тестов
         table:
-          actions: Действия
-          questions: Вопросы
+          col1: Вопросы
+          col2: Действия
       test:
         levels:
           easy: Легкий
@@ -84,6 +94,8 @@ ru:
           delete: Удалить
           edit: Редактировать
           show: Показать
+  gistquestionservice:
+    about: Вопрос о %{title} от TestGuru
   helpers:
     label:
       answer:
@@ -135,11 +147,17 @@ ru:
         one: Обнаружена %{count} ошибка
         other: Обнаружено %{count} ошибки
     footer:
+      language_label: 'Язык:'
       languages:
         en: Английский
         ru: Русский
-      language_label: "Язык:"
+      school: Учебный проект в онлайн-школе Thinknetica
+    nav:
+      welcome_html: Добро пожаловать, <b>%{email}</b> Guru
   test_passages:
+    gist:
+      failure: Во время сохранения gist произошла ошибка
+      success_html: <a href=%{url} target="_blank">Gist</a> успешно сохранён!
     result:
       header: Тест %{test_title} завершен!
       link_to:
@@ -156,11 +174,11 @@ ru:
         hard: Сложный
         normal: Нормальный
       table:
-        actions: Действия
-        author: Автор
-        level: Уровень
-        question: Вопросов
-        test: Тест
+        col1: Тест
+        col2: Вопросов
+        col3: Уровень
+        col4: Автор
+        col5: Действия
     test:
       buttons:
         start: Начать

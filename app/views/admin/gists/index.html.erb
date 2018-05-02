@@ -6,13 +6,9 @@
       <th scope="col"><%= t('.table.col1')%></th>
       <th scope="col"><%= t('.table.col2')%></th>
       <th scope="col"><%= t('.table.col3')%></th>
-      <th scope="col" colspan="3" class="text-center" style="width: 20%"><%= t('.table.col4')%></th>
+      <th scope="col"><%= t('.table.col4')%></th>
     </tr>
   </thead>
 
-  <%= render @tests %>
+  <%= render @gists %>
 </table>
-
-<p>
-  <%= link_to t('.link_to.add'), new_admin_test_path(@test) %><br>
-</p>
