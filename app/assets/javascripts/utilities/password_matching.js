@@ -4,8 +4,10 @@ document.addEventListener('turbolinks:load', function() {
   var passwordConfirmationField = form.elements.namedItem('user_password_confirmation')
   var fields = [passwordField, passwordConfirmationField];
 
-  passwordField.oninput = function() { paintFields(fields) }
-  passwordConfirmationField.oninput = function() { paintFields(fields) }
+  if (passwordField && passwordConfirmationField) {
+    passwordField.oninput = function() { paintFields(fields) }
+    passwordConfirmationField.oninput = function() { paintFields(fields) }
+  }
 })
 
 function paintFields(fields) {
