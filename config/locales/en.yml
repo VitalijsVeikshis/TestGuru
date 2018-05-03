@@ -1,5 +1,10 @@
 ---
 en:
+  devise:
+    registrations:
+      new:
+        password_alert: Passwords do not match
+        password_verified: Passwords match
   admin:
     answers:
       answer:

@@ -3,7 +3,11 @@
 <table class="table table-hover table-sm">
   <thead class="thead-light">
     <tr>
-      <th scope="col"><%= t('.table.col1')%></th>
+      <th class="sort-by-title pointer">
+        <%= t('.table.col1')%>
+        <%= octicon 'arrow-up', class: 'text-success hide' %>
+        <%= octicon 'arrow-down', class: 'text-success hide' %>
+      </th>
       <th scope="col"><%= t('.table.col2')%></th>
       <th scope="col"><%= t('.table.col3')%></th>
       <th scope="col"><%= t('.table.col4')%></th>
@@ -11,5 +15,5 @@
     </tr>
   </thead>
 
-  <%= render @tests %>
+  <tbody><%= render @tests %></tbody>
 </table>

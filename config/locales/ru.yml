@@ -1,5 +1,10 @@
 ---
 ru:
+  devise:
+    registrations:
+      new:
+        password_alert: Пароли не совпадают
+        password_verified: Пароли совпадают
   admin:
     answers:
       answer:
