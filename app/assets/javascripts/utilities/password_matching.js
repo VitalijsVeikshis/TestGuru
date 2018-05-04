@@ -1,7 +1,6 @@
 document.addEventListener('turbolinks:load', function() {
-  var form = document.forms[0]
-  var passwordField = form.elements.namedItem('user_password')
-  var passwordConfirmationField = form.elements.namedItem('user_password_confirmation')
+  var passwordField = document.querySelector('#user_password')
+  var passwordConfirmationField = document.querySelector('#user_password_confirmation')
   var fields = [passwordField, passwordConfirmationField];
 
   if (passwordField && passwordConfirmationField) {
@@ -11,31 +10,46 @@ document.addEventListener('turbolinks:load', function() {
 })
 
 function paintFields(fields) {
+  var alert = document.querySelector('.password-alert')
+  var verified = document.querySelector('.password-verified')
+
   if (!fields[1].value) {
-    removeStyle(fields, 'match')
-    removeStyle(fields, 'mismatch')
-    document.querySelector('.password-alert').classList.add('hide')
-    document.querySelector('.password-verified').classList.add('hide')
+    none(fields, alert, verified)
   } else if (fields[0].value == fields[1].value) {
-    removeStyle(fields, 'mismatch')
-    addStyle(fields, 'match')
-    document.querySelector('.password-alert').classList.add('hide')
-    document.querySelector('.password-verified').classList.remove('hide')
+    match(fields, alert, verified)
   } else {
-    removeStyle(fields, 'match')
-    addStyle(fields, 'mismatch')
-    document.querySelector('.password-verified').classList.add('hide')
-    document.querySelector('.password-alert').classList.remove('hide')
+    mismatch(fields, alert, verified)
   }
 }
 
-function addStyle(fields, style) {
+function none(fields, alert, verified) {
+  removeStyleFromFields(fields, 'match')
+  removeStyleFromFields(fields, 'mismatch')
+  alert.classList.add('hide')
+  verified.classList.add('hide')
+}
+
+function match(fields, alert, verified) {
+  removeStyleFromFields(fields, 'mismatch')
+  addStyleToFields(fields, 'match')
+  alert.classList.add('hide')
+  verified.classList.remove('hide')
+}
+
+function mismatch(fields, alert, verified) {
+  removeStyleFromFields(fields, 'match')
+  addStyleToFields(fields, 'mismatch')
+  verified.classList.add('hide')
+  alert.classList.remove('hide')
+}
+
+function addStyleToFields(fields, style) {
   fields.forEach( function(field) {
     field.classList.add(style)
   })
 }
 
-function removeStyle(fields, style) {
+function removeStyleFromFields(fields, style) {
   fields.forEach( function(field) {
     field.classList.remove(style)
   })
