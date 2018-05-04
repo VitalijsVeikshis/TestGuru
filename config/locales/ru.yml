@@ -64,6 +64,8 @@ ru:
           edit: Редактировать
           new: Новый ответ
     tests:
+      form_inline:
+        submit: ОК
       edit:
         header: Редактирование теста %{title}
       form:
