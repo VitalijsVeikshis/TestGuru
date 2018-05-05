@@ -10,7 +10,7 @@ function setProgressBar(progress_bar) {
   progress = getProgress(progress_bar)
 
   progress_bar.style.width = progress
-  progress_bar.innerHTML += progress
+  progress_bar.textContent += progress
 }
 
 function getProgress(progress_bar) {
