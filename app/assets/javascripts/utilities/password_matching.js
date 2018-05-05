@@ -22,6 +22,10 @@ function paintFields(fields) {
   }
 }
 
+function change_style(field, style) {
+
+}
+
 function none(fields, alert, verified) {
   removeStyleFromFields(fields, 'match')
   removeStyleFromFields(fields, 'mismatch')
