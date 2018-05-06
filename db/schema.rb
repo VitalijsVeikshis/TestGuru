@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20180429143238) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
     t.boolean "correct", default: false, null: false
@@ -48,10 +51,10 @@ ActiveRecord::Schema.define(version: 20180429143238) do
   create_table "test_passages", force: :cascade do |t|
     t.integer "test_id"
     t.integer "user_id"
-    t.integer "current_question_id"
     t.integer "correct_questions", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "current_question_id"
     t.index ["current_question_id"], name: "index_test_passages_on_current_question_id"
     t.index ["test_id"], name: "index_test_passages_on_test_id"
     t.index ["user_id"], name: "index_test_passages_on_user_id"
