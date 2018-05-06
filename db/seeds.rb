@@ -20,7 +20,6 @@ list_of_categories = Category.create!(
 
 list_of_users = User.create!(
   [
-=begin
     { email: 'User5@m.com',
       password: get_password('1'),
       password_confirmation: get_password('1'),
@@ -37,8 +36,7 @@ list_of_users = User.create!(
       type: 'Admin',
       first_name: 'user3_name',
       last_name: 'user3_lastname' },
-=end
-    { email: 'ona.atr@gmail.com',
+    { email: 'User4@m.com',
       password: get_password('4'),
       password_confirmation: get_password('4'),
       type: 'Admin',
