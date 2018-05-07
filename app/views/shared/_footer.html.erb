@@ -1,9 +1,9 @@
-<footer class="fixed-bottom bg-dark footer">
+<footer class="fixed-bottom bg-dark footer" data-locale="<%= I18n.locale %>">
   <div class="container text-center mt-3 text-white">
     <div>
       <%= form_with path: request.path, method: :get, local: true, class: "float-right" do |form| %>
         <%= form.label :set_lang, t('.language_label') %>
-        <%= form.select :set_lang, options_for_select({ t('.languages.en') => :en, t('.languages.ru') => :ru }, selected: I18n.locale), {}, onchange: 'this.form.submit();', class: "btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" %>
+        <%= form.select :set_lang, options_for_select({ t('.languages.en') => :en, t('.languages.ru') => :ru }, selected: I18n.locale), {}, onchange: 'this.form.submit();', class: "btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split locale" %>
       <% end %>
     </div>
 

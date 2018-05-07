@@ -26,9 +26,9 @@ function formInlineHandler(testId) {
     $testTitle.toggle()
 
     if($formInline.is(':visible')) {
-      link.textContent = 'Cancel'
+      link.textContent = I18n.t('cancel');
     } else {
-      link.textContent = 'Edit'
+      link.textContent = I18n.t('edit');
     }
   }
 }

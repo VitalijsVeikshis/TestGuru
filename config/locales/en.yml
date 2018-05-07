@@ -69,9 +69,9 @@ en:
         header: Tests
         link_to:
           add: Add new test
-          delete: Delete!
-          edit: Edit!
-          show: Show!
+          delete: Delete
+          edit: Edit
+          show: Show
         table:
           col1: Test
           col2: Questions
