@@ -87,6 +87,9 @@ en:
           col1: Questions
           col2: Actions
   contacts:
+    create:
+      success: Message sent.
+      alert: Please check the inputs.
     form:
       contact_us: Contact Us
   devise:

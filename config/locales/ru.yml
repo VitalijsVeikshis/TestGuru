@@ -99,6 +99,9 @@ ru:
   contacts:
     form:
       contact_us: Обратная связь
+    create:
+      success: Сообщение послано.
+      alert: Пожалуйста, проверьте поля с данными.
   devise:
     registrations:
       new:
