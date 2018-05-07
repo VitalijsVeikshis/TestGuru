@@ -1,10 +1,5 @@
 ---
 en:
-  devise:
-    registrations:
-      new:
-        password_alert: Passwords do not match
-        password_verified: Passwords match
   admin:
     answers:
       answer:
@@ -63,13 +58,13 @@ en:
           edit: Edit
           new: New Answer
     tests:
-      form_inline:
-        submit: OK
       edit:
         header: Edit %{title} Test
       form:
         link_to:
           back: Back to tests
+      form_inline:
+        submit: OK
       index:
         header: Tests
         link_to:
@@ -91,6 +86,14 @@ en:
         table:
           col1: Questions
           col2: Actions
+  contacts:
+    form:
+      contact_us: Contact Us
+  devise:
+    registrations:
+      new:
+        password_alert: Passwords do not match
+        password_verified: Passwords match
   gistquestionservice:
     about: A question about %{title} from TestGuru
   helpers:
@@ -98,6 +101,10 @@ en:
       answer:
         body: Body
         correct: Correct
+      contact:
+        content: Your message
+        email: Your email
+        name: Your name
       question:
         body: Body
       test:
@@ -108,6 +115,8 @@ en:
       answer:
         create: Add answer
         update: Update answer
+      contact:
+        create: Send
       question:
         create: Add question
         update: Update question
@@ -138,6 +147,7 @@ en:
         ru: Russian
       school: The educational project at Thinknetica online school
     nav:
+      contact: Contact Us
       welcome_html: Welcome, <b>%{email}</b> Guru
   test_passages:
     gist:

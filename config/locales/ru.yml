@@ -1,10 +1,5 @@
 ---
 ru:
-  devise:
-    registrations:
-      new:
-        password_alert: Пароли не совпадают
-        password_verified: Пароли совпадают
   admin:
     answers:
       answer:
@@ -64,13 +59,13 @@ ru:
           edit: Редактировать
           new: Новый ответ
     tests:
-      form_inline:
-        submit: ОК
       edit:
         header: Редактирование теста %{title}
       form:
         link_to:
           back: Назад к списку тестов
+      form_inline:
+        submit: ОК
       index:
         header: Тесты
         link_to:
@@ -101,6 +96,14 @@ ru:
           delete: Удалить
           edit: Редактировать
           show: Показать
+  contacts:
+    form:
+      contact_us: Обратная связь
+  devise:
+    registrations:
+      new:
+        password_alert: Пароли не совпадают
+        password_verified: Пароли совпадают
   gistquestionservice:
     about: Вопрос о %{title} от TestGuru
   helpers:
@@ -108,6 +111,10 @@ ru:
       answer:
         body: Ответ
         correct: Правильный
+      contact:
+        content: Ваше сообщение
+        email: Ваш email
+        name: Ваше имя
       question:
         body: Вопрос
       test:
@@ -120,6 +127,8 @@ ru:
       answer:
         create: Добавить ответ
         update: Обновить ответ
+      contact:
+        create: Отправить
       question:
         create: Добавить вопрос
         update: Обновить вопрос
@@ -160,6 +169,7 @@ ru:
         ru: Русский
       school: Учебный проект в онлайн-школе Thinknetica
     nav:
+      contact: Обратная связь
       welcome_html: Добро пожаловать, <b>%{email}</b> Guru
   test_passages:
     gist:
