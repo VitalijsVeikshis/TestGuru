@@ -2,7 +2,10 @@
   <td>
     <%= content_tag :span, question.body, class: 'resource-title', data: { resource_id: question.id } %>
     <% question == @question ? @question : question %>
-    <%= render 'form_inline', url: update_inline_admin_question_path(question), model: [:admin, question.test, question], resource: question, resource_content: question.body %>
+    <%= render 'shared/form_inline', url: update_inline_admin_question_path(question),
+                              model: [:admin, question.test, question],
+                              resource: question,
+                              resource_content: question.body %>
   </td>
   <td><%= link_to t('.link_to.show'), admin_question_path(question), class: "btn btn-secondary btn-sm"  %></td>
   <td><%= link_to t('.link_to.edit'),

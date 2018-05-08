@@ -2,7 +2,10 @@
   <td>
     <%= content_tag :span, test.title, class: 'resource-title', data: { resource_id: test.id } %>
     <% test == @test ? @test : test %>
-    <%= render 'form_inline', url: update_inline_admin_test_path(test), model: [:admin, test], resource: test, resource_content: test.title %>
+    <%= render 'shared/form_inline', url: update_inline_admin_test_path(test),
+                              model: [:admin, test],
+                              resource: test,
+                              resource_content: test.title %>
   </td>
   <td><%= test.questions.count %></td>
   <td><%= t(".levels.#{test_level(test)}") %></td>

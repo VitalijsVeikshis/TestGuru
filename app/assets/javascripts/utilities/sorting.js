@@ -5,14 +5,12 @@ document.addEventListener('turbolinks:load', function() {
 })
 
 function sortRowsByTitle() {
+  console.log(true)
   var table = document.querySelector('table')
 
-  // NodeList
-  //http://defeloper.mozilla/ru/docs/Web/API/NodeList
   var rows = table.querySelectorAll('tr')
   var sortedRows = []
 
-  // select all table rows except the first one which is the header
   for (var i = 1; i < rows.length; i++) {
     sortedRows.push(rows[i])
   }

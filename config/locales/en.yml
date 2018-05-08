@@ -63,8 +63,6 @@ en:
       form:
         link_to:
           back: Back to tests
-      form_inline:
-        submit: OK
       index:
         header: Tests
         link_to:
@@ -143,6 +141,8 @@ en:
         one: We have for you %{count} test
         other: We have for you %{count} tests
   shared:
+    form_inline:
+      submit: OK
     footer:
       language_label: 'Language:'
       languages:

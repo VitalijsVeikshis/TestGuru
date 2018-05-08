@@ -64,8 +64,6 @@ ru:
       form:
         link_to:
           back: Назад к списку тестов
-      form_inline:
-        submit: ОК
       index:
         header: Тесты
         link_to:
@@ -159,6 +157,8 @@ ru:
         one: Мы имеем для Вас %{count} тест
         other: We have for you %{count} теста
   shared:
+    form_inline:
+      submit: ОК
     errors:
       header:
         few: Обнаружено %{count} ошибки

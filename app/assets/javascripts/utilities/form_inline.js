@@ -16,9 +16,7 @@ function formInlineLinkHandler(event) {
 }
 
 function formInlineHandler(resourceId) {
-  console.log(resourceId)
   var link = document.querySelector('.form-inline-link[data-resource-id="' + resourceId + '"]')
-  console.log(link)
   if (link) {
     var $resourceTitle = $('.resource-title[data-resource-id="' + resourceId + '"]')
     var $formInline = $('.form-inline[data-resource-id="' + resourceId + '"]')
