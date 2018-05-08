@@ -1,6 +1,6 @@
 class Admin::QuestionsController < ApplicationController
   before_action :set_test, only: %i[index new create]
-  before_action :set_question, only: %i[show edit update destroy]
+  before_action :set_question, only: %i[show edit update destroy update_inline]
 
   def index
     redirect_to test_path(@test)
@@ -32,6 +32,14 @@ class Admin::QuestionsController < ApplicationController
     end
   end
 
+  def update_inline
+    if @question.update(inline_params)
+      redirect_to admin_test_path(@question.test)
+    else
+      render :index
+    end
+  end
+
   def destroy
     @question.destroy
     redirect_to admin_test_path(@question.test)
@@ -41,6 +49,13 @@ class Admin::QuestionsController < ApplicationController
 
   def question_params
     params.require(:question).permit(:body)
+  end
+
+  def inline_params
+    params.require(:question)
+          .permit(:content)
+          .merge(body: params[:question][:content])
+          .except(:content)
   end
 
   def set_test

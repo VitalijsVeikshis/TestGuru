@@ -33,7 +33,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def update_inline
-    if @test.update(test_params)
+    if @test.update(inline_params)
       redirect_to admin_tests_path
     else
       render :index
@@ -57,6 +57,13 @@ class Admin::TestsController < Admin::BaseController
 
   def test_params
     params.require(:test).permit(:title, :level, :category_id)
+  end
+
+  def inline_params
+    params.require(:test)
+          .permit(:content)
+          .merge(title: params[:test][:content])
+          .except(:content)
   end
 
   def rescue_with_test_not_found

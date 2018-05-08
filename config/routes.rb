@@ -26,6 +26,8 @@ Rails.application.routes.draw do
         patch :update_inline, on: :member
 
         resources :questions, shallow: true, except: :index do
+          patch :update_inline, on: :member
+
           resources :answers, shallow: true, except: :index
         end
       end
