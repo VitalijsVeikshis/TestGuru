@@ -33,7 +33,7 @@ class Admin::QuestionsController < ApplicationController
   end
 
   def update_inline
-    if @question.update(inline_params)
+    if @question.update(question_params)
       redirect_to admin_test_path(@question.test)
     else
       render :index
@@ -49,13 +49,6 @@ class Admin::QuestionsController < ApplicationController
 
   def question_params
     params.require(:question).permit(:body)
-  end
-
-  def inline_params
-    params.require(:question)
-          .permit(:content)
-          .merge(body: params[:question][:content])
-          .except(:content)
   end
 
   def set_test

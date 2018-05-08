@@ -1,13 +1,13 @@
 class ContactsController < ApplicationController
   def new
-    @contact = Contact.new
+    @contact = Contact.new(email: current_user&.email)
   end
 
   def create
     @contact = Contact.new(contact_params)
 
-    if @contact.save
-      send_email
+    if @contact.valid?
+      ContactsMailer.new_contact(@contact).deliver
 
       redirect_to root_path, notice: t('.success')
     else
@@ -20,11 +20,5 @@ class ContactsController < ApplicationController
 
   def contact_params
     params.require(:contact).permit(:name, :email, :content)
-  end
-
-  def send_email
-    User.admin_emails.each do |email|
-      ContactsMailer.new_contact(@contact, email).deliver_now
-    end
   end
 end

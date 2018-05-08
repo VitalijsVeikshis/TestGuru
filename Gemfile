@@ -34,8 +34,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'rails-i18n', '~> 5.1' # For 5.0.x, 5.1.x and 5.2.x
 gem "i18n-js"
 
-gem 'valid_email2'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
