@@ -8,7 +8,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -32,8 +32,7 @@ gem 'jbuilder', '~> 2.5'
 # LOCALIZATION
 
 gem 'rails-i18n', '~> 5.1' # For 5.0.x, 5.1.x and 5.2.x
-
-gem 'valid_email2'
+gem "i18n-js"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

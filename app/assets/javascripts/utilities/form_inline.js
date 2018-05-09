@@ -11,24 +11,23 @@ document.addEventListener('turbolinks:load', function() {
 function formInlineLinkHandler(event) {
   event.preventDefault()
 
-  var testId = this.dataset.testId
-  formInlineHandler(testId)
+  var resourceId = this.dataset.resourceId
+  formInlineHandler(resourceId)
 }
 
-function formInlineHandler(testId) {
-  var link = document.querySelector('.form-inline-link[data-test-id="' + testId + '"]')
-
+function formInlineHandler(resourceId) {
+  var link = document.querySelector('.form-inline-link[data-resource-id="' + resourceId + '"]')
   if (link) {
-    var $testTitle = $('.test-title[data-test-id="' + testId + '"]')
-    var $formInline = $('.form-inline[data-test-id="' + testId + '"]')
+    var $resourceTitle = $('.resource-title[data-resource-id="' + resourceId + '"]')
+    var $formInline = $('.form-inline[data-resource-id="' + resourceId + '"]')
 
     $formInline.toggle()
-    $testTitle.toggle()
+    $resourceTitle.toggle()
 
     if($formInline.is(':visible')) {
-      link.textContent = 'Cancel'
+      link.textContent = I18n.t('cancel');
     } else {
-      link.textContent = 'Edit'
+      link.textContent = I18n.t('edit');
     }
   }
 }

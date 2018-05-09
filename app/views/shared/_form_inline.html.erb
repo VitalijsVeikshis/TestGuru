@@ -1,0 +1,9 @@
+<%= form_with model: model,
+              url: url,
+              local: true,
+              class: 'form-inline',
+              html: { style: 'display: none' },
+              data: { resource_id: resource.id } do |form| %>
+  <%= form.text_field field, class: 'form-control-sm mr-2' %>
+  <%= form.submit t('.submit'), class: 'btn btn-primary btn-sm' %>
+<% end %>

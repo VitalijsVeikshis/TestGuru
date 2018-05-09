@@ -1,7 +1,11 @@
 <tr>
   <td>
-    <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id } %>
-    <%= render 'form_inline', test: test == @test ? @test : test %>
+    <%= content_tag :span, test.title, class: 'resource-title', data: { resource_id: test.id } %>
+    <% test = (test == @test ? @test : test) %>
+    <%= render 'shared/form_inline', model: [:admin, test],
+                                     url: update_inline_admin_test_path(test),
+                                     resource: test,
+                                     field: :title %>
   </td>
   <td><%= test.questions.count %></td>
   <td><%= t(".levels.#{test_level(test)}") %></td>
@@ -9,7 +13,7 @@
   <td>
     <%= link_to t('.link_to.edit'),
                 edit_admin_test_path(test),
-                data: { test_id: test.id },
+                data: { resource_id: test.id },
                 class: "btn btn-secondary btn-sm form-inline-link" %>
   </td>
   <td>

@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   scope '(:lang)' do
     root 'main#index'
 
+    get 'contact', to: 'contacts#new'
+    post 'contact', to: 'contacts#create'
+
     devise_for :users,
                controllers: { sessions: 'sessions' },
                path: :gurus,
@@ -23,6 +26,8 @@ Rails.application.routes.draw do
         patch :update_inline, on: :member
 
         resources :questions, shallow: true, except: :index do
+          patch :update_inline, on: :member
+
           resources :answers, shallow: true, except: :index
         end
       end

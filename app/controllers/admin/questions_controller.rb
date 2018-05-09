@@ -1,6 +1,6 @@
 class Admin::QuestionsController < ApplicationController
   before_action :set_test, only: %i[index new create]
-  before_action :set_question, only: %i[show edit update destroy]
+  before_action :set_question, only: %i[show edit update destroy update_inline]
 
   def index
     redirect_to test_path(@test)
@@ -29,6 +29,14 @@ class Admin::QuestionsController < ApplicationController
       redirect_to admin_test_path(@question.test)
     else
       render :edit
+    end
+  end
+
+  def update_inline
+    if @question.update(question_params)
+      redirect_to admin_test_path(@question.test)
+    else
+      render :index
     end
   end
 

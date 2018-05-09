@@ -1,0 +1,21 @@
+<%= form_with model: @contact, url: contact_path, local: true do |form| %>
+  <%= render 'shared/errors', resource: @contact %>
+  <div class="form-group">
+    <p>
+      <%= form.label :name %>
+      <%= form.text_field :name, id: :contact_name, class: 'form-control' %>
+    </p>
+
+    <p>
+      <%= form.label :email %>
+      <%= form.text_field :email, id: :contact_email, class: 'form-control' %>
+    </p>
+
+    <p>
+      <%= form.label :content %>
+      <%= form.text_area :content, cols: 10, rows: 5, id: :contact_content, class: 'form-control' %>
+    </p>
+
+    <p><%= form.submit class: 'btn btn-primary' %></p>
+  </div>
+<% end %>

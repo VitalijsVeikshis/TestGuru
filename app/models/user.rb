@@ -16,10 +16,7 @@ class User < ApplicationRecord
 
   validates :email,
             presence: true,
-            uniqueness: true,
-            'valid_email_2/email': true
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+            uniqueness: true
 
   scope :authors, -> { joins(:created_tests) }
   scope :by_email, ->(email) { where(email: email) }

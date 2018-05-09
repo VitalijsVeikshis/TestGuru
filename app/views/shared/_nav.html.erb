@@ -1,5 +1,8 @@
 <nav class="navbar <%= current_user&.admin? ? 'navbar-dark bg-primary' : 'navbar-light bg-light' %>">
-  <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
+  <span class="navbar-text" >
+    <%= link_to 'TestGuru', root_path, class: 'navbar-brand mr-1' %>|
+    <%= link_to t('.contact'), contact_path %>
+  </span>
 
   <span class="navbar-text">
     <% if user_signed_in? %>
