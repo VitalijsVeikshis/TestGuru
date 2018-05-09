@@ -21,10 +21,6 @@ class User < ApplicationRecord
   scope :authors, -> { joins(:created_tests) }
   scope :by_email, ->(email) { where(email: email) }
 
-  def self.admin_emails
-    Admin.all.pluck(:email)
-  end
-
   def tests_by_level(level)
     tests.where(level: level)
   end

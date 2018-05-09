@@ -1,5 +1,5 @@
 class ContactsMailer < ApplicationMailer
-  default to: -> { User.admin_emails }
+  default to: -> { Admin.emails }
 
   def new_contact(contact)
     @contact = contact
