@@ -1,6 +1,27 @@
 ---
 ru:
+  badges:
+    index:
+      table:
+        col1: Значок
+        col2: Название
+        col3: Статус
   admin:
+    badges:
+      index:
+        table:
+          col1: Значок
+          col2: Название
+          col3: Действия
+        link_to:
+          new_badge_for_test_attempt: Новый значок за попытки
+          new_badge_for_test_category: Новый значок за категорию
+          new_badge_for_test_level: Новый значок за уровень
+      badge:
+        link_to:
+          delete: Удалить
+          edit: Редактировать
+          show: Показать
     answers:
       answer:
         confirm:
@@ -122,6 +143,21 @@ ru:
         category_id: Категория
         level: Уровень
         title: Название
+      badge_for_test_attempt:
+        name: Название
+        picture_url: URL изображения
+        type: Тип
+        attempts: Количество попыток
+      badge_for_test_category:
+        name: Название
+        picture_url: URL изображения
+        type: Тип
+        category: Категория
+      badge_for_test_level:
+        name: Название
+        picture_url: URL изображения
+        type: Тип
+        level: Уровень
     select:
       promt: Пожалуйста, выберите
     submit:
@@ -136,6 +172,12 @@ ru:
       test:
         create: Создать тест
         update: Обновить тест
+      badge_for_test_attempt:
+        create: Создать
+      badge_for_test_category:
+        create: Создать
+      badge_for_test_level:
+        create: Создать
     test_passages:
       miss: Тест не пройден!
       pass: Тест успешно пройден!

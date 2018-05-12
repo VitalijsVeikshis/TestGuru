@@ -6,6 +6,7 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_first_question, on: :create
   before_update :before_save_next_question
+  before_update :pass!, if: :completed?
 
   def completed?
     current_question.nil?
@@ -19,8 +20,8 @@ class TestPassage < ApplicationRecord
     save!
   end
 
-  def success?(percent = 85)
-    current_result >= percent
+  def pass!(percent = 85)
+    update_columns(updated_at: Time.current, pass: current_result >= percent)
   end
 
   def current_result

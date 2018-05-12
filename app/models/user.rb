@@ -13,6 +13,8 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :created_tests, class_name: 'Test', foreign_key: 'author_id'
   has_many :gists
+  has_many :user_badges
+  has_many :badges, through: :user_badges
 
   validates :email,
             presence: true,
@@ -31,5 +33,34 @@ class User < ApplicationRecord
 
   def admin?
     is_a?(Admin)
+  end
+
+  def test_passages_by_pass(pass)
+    test_passages.where(pass: pass)
+  end
+
+  def tests_by_pass(pass)
+    tests.where(test_passages: { pass: pass })
+  end
+
+  def tests_by_pass_and_category(pass, category)
+    tests.joins(:category)
+         .where(categories: { title: category }, test_passages: { pass: pass })
+  end
+
+  def test_passages_by_test(test)
+    test_passages.where(test: test)
+  end
+
+  def tests_by_pass_and_level(pass, level)
+    tests.where(level: level, test_passages: { pass: pass })
+  end
+
+  def pass_tests
+
+  end
+
+  def last_test_passage
+    test_passages.order(id: :asc).last
   end
 end

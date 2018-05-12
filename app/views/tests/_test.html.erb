@@ -2,6 +2,7 @@
   <td><%= test.title %></td>
   <td><%= test.questions.count %></td>
   <td><%= t(".levels.#{test_level(test)}") %></td>
+  <td><%= test.category.title %></td>
   <td><%= test.author.email %></td>
   <td><%= button_to t('.buttons.start'), start_test_path(test), class: "btn btn-secondary btn-sm" %></td>
 </tr>

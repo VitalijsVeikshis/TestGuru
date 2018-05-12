@@ -1,0 +1,25 @@
+<%= form_with model: [:admin, @badge], local: true do |form| %>
+  <%= render 'shared/errors', resource: @answer %>
+
+  <p>
+   <%= form.label :name %><br>
+   <%= form.text_field :name, id: :badge_name %>
+  </p>
+
+  <p>
+   <%= form.label :picture_url %><br>
+   <%= form.text_field :picture_url, id: :badge_picture_url %>
+  </p>
+
+  <p>
+    <%= form.label :type %><br>
+    <%= form.text_field :type, value: 'BadgeForTestCategory', disabled: true, id: :badge_type %>
+  </p>
+
+  <p>
+    <%= form.label :category %><br>
+    <%= form.text_field 'params[category]', id: :badge_category %>
+  </p>
+
+  <p><%= form.submit %></p>
+<% end %>
