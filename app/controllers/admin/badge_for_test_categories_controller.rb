@@ -7,7 +7,7 @@ class Admin::BadgeForTestCategoriesController < ApplicationController
     @badge = BadgeForTestCategory.new(badge_params)
 
     if @badge.save
-      redirect_to admin_badge_path(@badge)
+      redirect_to admin_badges_path
     else
       render :new
     end

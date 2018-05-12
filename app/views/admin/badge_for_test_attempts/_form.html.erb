@@ -3,23 +3,23 @@
 
   <p>
    <%= form.label :name %><br>
-   <%= form.text_field :name, id: :badge_name %>
+   <%= form.text_field :name, id: :badge_name, class: 'form-control' %>
   </p>
 
   <p>
    <%= form.label :picture_url %><br>
-   <%= form.text_field :picture_url, id: :badge_picture_url %>
+   <%= form.text_field :picture_url, id: :badge_picture_url, class: 'form-control' %>
   </p>
 
   <p>
     <%= form.label :type %><br>
-    <%= form.text_field :type, value: 'BadgeForTestAttempt', disabled: true, id: :badge_type %>
+    <%= form.text_field :type, value: 'BadgeForTestAttempt', disabled: true, id: :badge_type, class: 'form-control' %>
   </p>
 
   <p>
     <%= form.label :attempts %><br>
-    <%= form.text_field 'params[attempts]', id: :badge_attempts %>
+    <%= form.text_field 'params[attempts]', id: :badge_attempts, class: 'form-control' %>
   </p>
 
-  <p><%= form.submit %></p>
+  <p><%= form.submit class: 'btn btn-primary' %></p>
 <% end %>
