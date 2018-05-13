@@ -16,4 +16,14 @@ module TestPassagesHelper
       'result-unsuccess-color'
     end
   end
+
+  def timer(test_passage)
+    test_passage.time_left&.positive? ? show_time(test_passage) : '00:00:00'
+  end
+
+  private
+
+  def show_time(test_passage)
+    Time.at(test_passage.time_left).utc.strftime('%H:%M:%S')
+  end
 end
