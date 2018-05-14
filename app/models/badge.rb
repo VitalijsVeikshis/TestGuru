@@ -2,8 +2,6 @@ class Badge < ApplicationRecord
   has_many :user_badges
   has_many :users, through: :user_badges
 
-  attr_reader :child_classes
-
   def self.inherited(child)
     child.instance_eval do
       def model_name
