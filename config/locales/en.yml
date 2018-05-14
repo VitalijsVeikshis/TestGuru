@@ -14,9 +14,7 @@ en:
           col2: Name
           col3: Actions
         link_to:
-          new_badge_for_test_attempt: New badge for attempts
-          new_badge_for_test_category: New badge for category
-          new_badge_for_test_level: New badge for level
+          new_badge: New badge
       badge:
         link_to:
           delete: Delete
@@ -133,20 +131,12 @@ en:
         category_id: Category
         level: Level
         title: Title
-      badge_for_test_attempt:
+      badge:
         name: Name
         picture_url: Picture URL
         type: Type
         attempts: Attempts
-      badge_for_test_category:
-        name: Name
-        picture_url: Picture URL
-        type: Type
         category: Category
-      badge_for_test_level:
-        name: Name
-        picture_url: Picture URL
-        type: Type
         level: Level
     submit:
       answer:
@@ -160,11 +150,7 @@ en:
       test:
         create: Create test
         update: Update test
-      badge_for_test_attempt:
-        create: Create
-      badge_for_test_category:
-        create: Create
-      badge_for_test_level:
+      badge:
         create: Create
     test_passages:
       miss: The test isn't passed!
