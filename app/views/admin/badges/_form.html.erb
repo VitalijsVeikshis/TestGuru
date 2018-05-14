@@ -12,14 +12,11 @@
   </p>
 
   <p>
-    <%= form.label :type %><br>
-    <%= form.text_field :type, value: 'BadgeForTestLevel', disabled: true, id: :badge_type, class: 'form-control' %>
+    <%= form.label :type, class: 'my-badge' %><br>
+    <%= form.collection_select :type, Badge.select_options, :first, :last, {}, id: :badge_type, class: 'badge-type form-control' %>
   </p>
 
-  <p>
-    <%= form.label :level %><br>
-    <%= form.text_field 'params[level]', id: :badge_level, class: 'form-control' %>
-  </p>
+  <%= render 'badge_params', form: form %>
 
   <p><%= form.submit class: 'btn btn-primary' %></p>
 <% end %>

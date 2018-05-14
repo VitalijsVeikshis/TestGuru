@@ -1,6 +1,7 @@
 class TestPassagesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_test_passage, only: %i[show update result gist]
+  before_action :set_badge_service, on: :create
 
   def show
     redirect_to tests_path if empty_test?
@@ -11,8 +12,8 @@ class TestPassagesController < ApplicationController
   def update
     @test_passage.accept!(Array(params[:answer_ids])) unless @test_passage.completed?
 
-    if @test_passage.completed?
-      check_badges
+    if @test_passage.completed? || @test_passage.time_left_ended?
+      @badge_service.check
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
     else
@@ -40,6 +41,10 @@ class TestPassagesController < ApplicationController
     @test_passage = TestPassage.find(params[:id])
   end
 
+  def set_badge_service
+    @badge_service = BadgeService.new(current_user: current_user)
+  end
+
   def empty_test?
     @test_passage.test.questions.count.zero?
   end
@@ -47,12 +52,5 @@ class TestPassagesController < ApplicationController
   def create_gist(gist)
     current_user.gists.create!(url: gist.html_url,
                                question: @test_passage.current_question)
-  end
-
-  def check_badges
-    Badge.all.each do |badge|
-      current_user.badges.push(badge) if badge.pass?(current_user)
-      # && !current_user.badges.include?(badge)
-    end
   end
 end
