@@ -1,6 +1,0 @@
-<h1>
-  <%= content_tag :span, timer(test_passage),
-                         class: 'timer unended text-right',
-                         data: { time_left: test_passage.time_left.nil? ? 'false' : test_passage.time_left,
-                                 test_completed: test_passage.completed? } %>
-</h1>
