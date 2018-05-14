@@ -1,5 +1,5 @@
 document.addEventListener('turbolinks:load', function() {
-  var badgeForm = document.querySelector('.badge-form')
+  var badgeForm = document.querySelector('.badge-form');
 
   if (badgeForm) {
     badgeForm.addEventListener('submit', function() {
