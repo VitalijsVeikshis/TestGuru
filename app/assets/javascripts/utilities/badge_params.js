@@ -3,11 +3,12 @@ document.addEventListener('turbolinks:load', function() {
 
   if (badgeType) {
     var badgeParams = document.querySelectorAll('.badge-params')
+    var paramsInputs = document.querySelectorAll('.params-input')
 
-    show_params(badgeType, badgeParams)
+    show_params(badgeType, badgeParams, paramsInputs)
 
     badgeType.addEventListener('change', function() {
-      show_params(badgeType, badgeParams)
+      show_params(badgeType, badgeParams, paramsInputs)
     })
   }
 })
@@ -15,6 +16,7 @@ document.addEventListener('turbolinks:load', function() {
 function all_hide(badgeParams) {
   for (var i = 0; i < badgeParams.length; i++) {
     badgeParams[i].classList.add('hide')
+    badgeParams[i].value = ''
   }
 }
 
@@ -24,9 +26,16 @@ function remove_hide(currentBadgeParams) {
   }
 }
 
-function show_params(badgeType, badgeParams) {
+function clear_fields(paramsInputs) {
+  for (var i = 0; i < paramsInputs.length; i++) {
+    paramsInputs[i].value = ''
+  }
+}
+
+function show_params(badgeType, badgeParams, paramsInputs) {
   var badgeClass = badgeType.options[badgeType.selectedIndex].value.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
   var currentBadgeParams = document.querySelectorAll('.' + badgeClass)
   all_hide(badgeParams)
+  clear_fields(paramsInputs)
   remove_hide(currentBadgeParams)
 }
