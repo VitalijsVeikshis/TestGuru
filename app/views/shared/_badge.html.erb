@@ -1,0 +1,4 @@
+<% user_badges = current_user.badges %>
+<td><%= image_tag(badge.picture_url, height: "60") %></td>
+<td><%= badge.name %></td>
+<td><%= user_badges.include?(badge) ? 'Pass' : 'Out' %></td>

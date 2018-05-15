@@ -9,6 +9,7 @@
   </td>
   <td><%= test.questions.count %></td>
   <td><%= t(".levels.#{test_level(test)}") %></td>
+  <td><%= test.category.title %></td>
   <td><%= link_to t('.link_to.show'), admin_test_path(test), class: "btn btn-secondary btn-sm" %></td>
   <td>
     <%= link_to t('.link_to.edit'),

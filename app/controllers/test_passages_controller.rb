@@ -9,9 +9,10 @@ class TestPassagesController < ApplicationController
   def result; end
 
   def update
-    @test_passage.accept!(Array(params[:answer_ids]))
+    @test_passage.accept!(Array(params[:answer_ids])) unless @test_passage.completed?
 
-    if @test_passage.completed?
+    if @test_passage.completed? || @test_passage.time_left&.zero?
+      check_badges
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
     else
@@ -46,5 +47,12 @@ class TestPassagesController < ApplicationController
   def create_gist(gist)
     current_user.gists.create!(url: gist.html_url,
                                question: @test_passage.current_question)
+  end
+
+  def check_badges
+    Badge.all.each do |badge|
+      current_user.badges.push(badge) if badge.pass?(current_user)
+      # && !current_user.badges.include?(badge)
+    end
   end
 end

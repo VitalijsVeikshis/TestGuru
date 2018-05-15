@@ -10,6 +10,9 @@
       <% if current_user.admin? %>
         <%= link_to 'Tests', admin_tests_path %> |
         <%= link_to 'Gists', admin_gists_path %> |
+        <%= link_to 'Badges', admin_badges_path %> |
+      <% else %>
+        <%= link_to 'Badges', badges_path %> |
       <% end %>
       <%= link_to 'Log out', destroy_user_session_path, method: 'delete' %>
     <% else %>

@@ -6,6 +6,7 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_first_question, on: :create
   before_update :before_save_next_question
+  before_update :pass!, if: :completed?
 
   def completed?
     current_question.nil?
@@ -19,8 +20,8 @@ class TestPassage < ApplicationRecord
     save!
   end
 
-  def success?(percent = 85)
-    current_result >= percent
+  def pass!(percent = 85)
+    self.pass = (current_result >= percent)
   end
 
   def current_result
@@ -29,6 +30,14 @@ class TestPassage < ApplicationRecord
 
   def question_number
     test.questions.order(:id).where('id < ?', current_question.id).count + 1
+  end
+
+  def time_left
+    return test.timer if test.timer.nil?
+
+    time_left = test.timer - (Time.now.to_i - created_at.to_i)
+
+    time_left.positive? ? time_left : 0
   end
 
   private

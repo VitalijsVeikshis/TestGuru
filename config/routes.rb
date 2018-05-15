@@ -21,6 +21,8 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :badges, only: :index
+
     namespace :admin do
       resources :tests do
         patch :update_inline, on: :member
@@ -31,7 +33,16 @@ Rails.application.routes.draw do
           resources :answers, shallow: true, except: :index
         end
       end
+
       resources :gists, only: %i[index destroy]
+
+      resources :badges, except: %i[new create] do
+        patch :update_inline, on: :member
+      end
+
+      resources :badge_for_test_attempts, only: %i[new create]
+      resources :badge_for_test_categories, only: %i[new create]
+      resources :badge_for_test_levels, only: %i[new create]
     end
   end
 end

@@ -1,6 +1,27 @@
 ---
 en:
+  badges:
+    index:
+      table:
+        col1: Badge
+        col2: Name
+        col3: Status
   admin:
+    badges:
+      index:
+        table:
+          col1: Badge
+          col2: Name
+          col3: Actions
+        link_to:
+          new_badge_for_test_attempt: New badge for attempts
+          new_badge_for_test_category: New badge for category
+          new_badge_for_test_level: New badge for level
+      badge:
+        link_to:
+          delete: Delete
+          edit: Edit
+          show: Show
     answers:
       answer:
         confirm:
@@ -112,6 +133,21 @@ en:
         category_id: Category
         level: Level
         title: Title
+      badge_for_test_attempt:
+        name: Name
+        picture_url: Picture URL
+        type: Type
+        attempts: Attempts
+      badge_for_test_category:
+        name: Name
+        picture_url: Picture URL
+        type: Type
+        category: Category
+      badge_for_test_level:
+        name: Name
+        picture_url: Picture URL
+        type: Type
+        level: Level
     submit:
       answer:
         create: Add answer
@@ -124,6 +160,12 @@ en:
       test:
         create: Create test
         update: Update test
+      badge_for_test_attempt:
+        create: Create
+      badge_for_test_category:
+        create: Create
+      badge_for_test_level:
+        create: Create
     test_passages:
       miss: The test isn't passed!
       pass: The test is successfully passed!
