@@ -47,7 +47,7 @@ class Admin::BadgesController < Admin::BaseController
   private
 
   def badge_type
-    if params[:badge][:type].in?(Badge.select_options)
+    if params[:badge][:type].to_sym.in?(Badge.select_options)
       params[:badge][:type].constantize
     end
   end
