@@ -29,7 +29,7 @@ class TestPassage < ApplicationRecord
   end
 
   def question_number
-    test.questions.order(:id).where('id < ?', current_question.id).count + 1
+    test.questions.order(:id).where('id < ?', current_question&.id).count + 1
   end
 
   def time_left

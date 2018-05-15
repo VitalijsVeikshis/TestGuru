@@ -12,14 +12,8 @@ class Badge < ApplicationRecord
   end
 
   def self.select_options
-    load_descendants if descendants.empty?
-
-    Hash[descendants.map(&:to_s).map { |value| [value, value.underscore.humanize] }]
-  end
-
-  def self.load_descendants
-    Dir["#{Rails.root}/app/models/*.rb"].each do |file|
-      require_dependency file
-    end
+    { BadgeForTestAttempt: 'Badge for test attempt',
+      BadgeForTestLevel: 'Badge for test level',
+      BadgeForTestCategory: 'Badge for test category' }
   end
 end

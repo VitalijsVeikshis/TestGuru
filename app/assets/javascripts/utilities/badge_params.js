@@ -32,7 +32,7 @@ function clearFields(paramsInputs) {
   }
 }
 
-function show_params(badgeType, badgeParams, paramsInputs) {
+function showParams(badgeType, badgeParams, paramsInputs) {
   var badgeClass = badgeType.options[badgeType.selectedIndex].value.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
   var currentBadgeParams = document.querySelectorAll('.' + badgeClass);
   allHide(badgeParams);
