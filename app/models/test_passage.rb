@@ -21,7 +21,7 @@ class TestPassage < ApplicationRecord
   end
 
   def pass!(percent = 85)
-    update_columns(updated_at: Time.current, pass: current_result >= percent)
+    self.pass = (current_result >= percent)
   end
 
   def current_result
@@ -30,6 +30,14 @@ class TestPassage < ApplicationRecord
 
   def question_number
     test.questions.order(:id).where('id < ?', current_question.id).count + 1
+  end
+
+  def time_left
+    return if test.timer.nil?
+
+    time_left = test.timer - (Time.now.to_i - created_at.to_i)
+
+    time_left.positive? ? time_left : 0
   end
 
   private
