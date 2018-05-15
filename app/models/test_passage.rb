@@ -33,7 +33,7 @@ class TestPassage < ApplicationRecord
   end
 
   def time_left
-    return test.timer if test.timer.nil?
+    return if test.timer.nil?
 
     time_left = test.timer - (Time.now.to_i - created_at.to_i)
 
