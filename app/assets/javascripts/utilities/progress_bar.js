@@ -1,21 +1,21 @@
 document.addEventListener('turbolinks:load', function() {
-  var progress_bar = document.querySelector('.progress-bar');
+  var progressBar = document.querySelector('.progress-bar');
 
-  if (progress_bar) {
-    setProgressBar(progress_bar);
+  if (progressBar) {
+    setProgressBar(progressBar);
   }
 })
 
-function setProgressBar(progress_bar) {
-  progress = getProgress(progress_bar);
+function setProgressBar(progressBar) {
+  progress = getProgress(progressBar);
 
-  progress_bar.style.width = progress;
-  progress_bar.textContent += progress;
+  progressBar.style.width = progress;
+  progressBar.textContent += progress;
 }
 
-function getProgress(progress_bar) {
-  var questionNumber = progress_bar.dataset.questionNumber;
-  var questionCount = progress_bar.dataset.questionCount;
+function getProgress(progressBar) {
+  var questionNumber = progressBar.dataset.questionNumber;
+  var questionCount = progressBar.dataset.questionCount;
 
   return Math.round(questionNumber/questionCount * 100) + '%';
 }

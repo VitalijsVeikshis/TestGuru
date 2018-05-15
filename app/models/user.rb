@@ -23,20 +23,12 @@ class User < ApplicationRecord
   scope :authors, -> { joins(:created_tests) }
   scope :by_email, ->(email) { where(email: email) }
 
-  def tests_by_level(level)
-    tests.where(level: level)
-  end
-
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test: test)
   end
 
   def admin?
     is_a?(Admin)
-  end
-
-  def test_passages_by_pass(pass)
-    test_passages.where(pass: pass)
   end
 
   def tests_by_pass(pass)
@@ -48,19 +40,7 @@ class User < ApplicationRecord
          .where(categories: { title: category }, test_passages: { pass: pass })
   end
 
-  def test_passages_by_test(test)
-    test_passages.where(test: test)
-  end
-
   def tests_by_pass_and_level(pass, level)
     tests.where(level: level, test_passages: { pass: pass })
-  end
-
-  def pass_tests
-
-  end
-
-  def last_test_passage
-    test_passages.order(id: :asc).last
   end
 end

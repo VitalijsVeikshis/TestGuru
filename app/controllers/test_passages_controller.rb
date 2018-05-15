@@ -9,13 +9,13 @@ class TestPassagesController < ApplicationController
   def result; end
 
   def update
-    @test_passage.accept!(Array(params[:answer_ids])) unless @test_passage.completed?
-
     if @test_passage.completed? || @test_passage.time_left&.zero?
-      check_badges
-      TestsMailer.completed_test(@test_passage).deliver_now
+      before_result
+
       redirect_to result_test_passage_path(@test_passage)
     else
+      @test_passage.accept!(Array(params[:answer_ids]))
+
       render :show
     end
   end
@@ -49,10 +49,9 @@ class TestPassagesController < ApplicationController
                                question: @test_passage.current_question)
   end
 
-  def check_badges
-    Badge.all.each do |badge|
-      current_user.badges.push(badge) if badge.pass?(current_user)
-      # && !current_user.badges.include?(badge)
-    end
+  def before_result
+    current_user.badges.push(*BadgeService.new(user: current_user).check)
+
+    TestsMailer.completed_test(@test_passage).deliver_now
   end
 end

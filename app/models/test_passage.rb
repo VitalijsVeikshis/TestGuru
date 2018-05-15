@@ -29,11 +29,11 @@ class TestPassage < ApplicationRecord
   end
 
   def question_number
-    test.questions.order(:id).where('id < ?', current_question.id).count + 1
+    test.questions.order(:id).where('id < ?', current_question&.id).count + 1
   end
 
   def time_left
-    return test.timer if test.timer.nil?
+    return if test.timer.nil?
 
     time_left = test.timer - (Time.now.to_i - created_at.to_i)
 
